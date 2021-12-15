@@ -94,7 +94,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 118a0028f1843f34781fff991565e343, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5eda65b7e7ce274c8d93ed27cfc9b88, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 8144443259667496584}
   - component: {fileID: 2376287336678407454}
   - component: {fileID: 3925869176203208186}
-  - component: {fileID: 4590045403203077069}
+  - component: {fileID: 3512792925987218257}
   m_Layer: 0
   m_Name: TestInteractable 1
   m_TagString: Untagged
@@ -178,7 +178,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4590045403203077069}
+        - m_Target: {fileID: 3512792925987218257}
           m_MethodName: SetGazedAt
           m_Mode: 6
           m_Arguments:
@@ -193,7 +193,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4590045403203077069}
+        - m_Target: {fileID: 3512792925987218257}
           m_MethodName: SetGazedAt
           m_Mode: 6
           m_Arguments:
@@ -208,7 +208,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4590045403203077069}
+        - m_Target: {fileID: 3512792925987218257}
           m_MethodName: Interaction
           m_Mode: 0
           m_Arguments:
@@ -219,7 +219,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &4590045403203077069
+--- !u!114 &3512792925987218257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,10 +228,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8144443259667496596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84ab47eae60fae4486b2b53e564728f, type: 3}
+  m_Script: {fileID: 11500000, guid: 86a41424aba6b124db5083a19ce8e877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactionLoadTime: 1
+  loadImage: {fileID: 8230814856750092273}
+  loadCanvas: {fileID: 3523941553437649117}
+  oldPlayerController: {fileID: 0}
+  newPlayerController: {fileID: 0}
 --- !u!1 &8286129075969345396
 GameObject:
   m_ObjectHideFlags: 0

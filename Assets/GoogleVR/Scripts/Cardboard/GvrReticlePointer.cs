@@ -16,6 +16,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using GoogleVR.HelloVR;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -99,12 +100,26 @@ public class GvrReticlePointer : GvrBasePointer
     /// <inheritdoc/>
     public override void OnPointerEnter(RaycastResult raycastResultResult, bool isInteractive)
     {
+        Interactable interactable = raycastResultResult.gameObject.GetComponent<Interactable>();
+        if (!interactable || !interactable.CanInteract())
+        {
+            SetPointerTarget(raycastResultResult.worldPosition, false);
+            return;
+        }
+        
         SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
     }
 
     /// <inheritdoc/>
     public override void OnPointerHover(RaycastResult raycastResultResult, bool isInteractive)
     {
+        Interactable interactable = raycastResultResult.gameObject.GetComponent<Interactable>();
+        if (!interactable || !interactable.CanInteract())
+        {
+            SetPointerTarget(raycastResultResult.worldPosition, false);
+            return;
+        }
+        
         SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
     }
 

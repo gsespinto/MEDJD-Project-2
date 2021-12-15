@@ -94,7 +94,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 118a0028f1843f34781fff991565e343, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5eda65b7e7ce274c8d93ed27cfc9b88, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -115,6 +115,8 @@ GameObject:
   - component: {fileID: 8144443259667496585}
   - component: {fileID: 8144443259667496584}
   - component: {fileID: 2376287336678407454}
+  - component: {fileID: 5340770475569774753}
+  - component: {fileID: 7585306650973028282}
   m_Layer: 0
   m_Name: TestInteractable
   m_TagString: Untagged
@@ -160,6 +162,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 5, z: 3}
   m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &5340770475569774753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &7585306650973028282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84ab47eae60fae4486b2b53e564728f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionLoadTime: 1
+  loadImage: {fileID: 8230814856750092273}
+  loadCanvas: {fileID: 3523941553437649117}
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0
