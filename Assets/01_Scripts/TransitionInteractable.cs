@@ -9,6 +9,7 @@
         [Header("References")]
         [SerializeField] private GameObject oldPlayerController;
         [SerializeField] private GameObject newPlayerController;
+        [SerializeField] private Transform newCameraContainer;
 
         protected override void Start()
         {
@@ -28,6 +29,8 @@
                 return;
 
             newPlayerController.SetActive(true);
+            Camera.main.transform.SetParent(newCameraContainer, true);
+            
             Destroy(oldPlayerController);
             Destroy(this.gameObject);
         }

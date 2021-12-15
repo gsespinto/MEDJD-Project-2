@@ -209,7 +209,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 3512792925987218257}
-          m_MethodName: Interaction
+          m_MethodName: OnInteraction
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

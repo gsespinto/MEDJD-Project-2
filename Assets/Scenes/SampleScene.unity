@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &33100459 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6129634177330806432, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
+    type: 3}
+  m_PrefabInstance: {fileID: 7645851195245587324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &57206153
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,12 +714,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7164103548799783644}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &1871526489 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4793197574479828407, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
-    type: 3}
-  m_PrefabInstance: {fileID: 7645851195245587324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1943687452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -731,6 +731,11 @@ PrefabInstance:
       propertyPath: oldPlayerController
       value: 
       objectReference: {fileID: 1299679831}
+    - target: {fileID: 3512792925987218257, guid: 1c4ea734bbda77d4b94904a5968acd7b,
+        type: 3}
+      propertyPath: newCameraContainer
+      value: 
+      objectReference: {fileID: 33100459}
     - target: {fileID: 3523941553437649117, guid: 1c4ea734bbda77d4b94904a5968acd7b,
         type: 3}
       propertyPath: m_Camera
@@ -5318,6 +5323,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6215351662793235578, guid: 3645735f480c7aa469a5ebe12f2ff580,
+        type: 3}
+      propertyPath: speed
+      value: 0.0005
+      objectReference: {fileID: 0}
     - target: {fileID: 7164103547672598661, guid: 3645735f480c7aa469a5ebe12f2ff580,
         type: 3}
       propertyPath: m_RootOrder
@@ -5840,6 +5850,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7022021921280634660, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8224608978857705564, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
       propertyPath: field of view
@@ -5854,7 +5869,7 @@ PrefabInstance:
         type: 3}
       propertyPath: overridePointerCamera
       value: 
-      objectReference: {fileID: 1871526489}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c43a2c27df5dcd44b9cc188e1cb4927, type: 3}
 --- !u!1001 &7704614197394597746
