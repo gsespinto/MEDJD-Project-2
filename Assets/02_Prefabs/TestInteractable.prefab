@@ -114,7 +114,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8144443259667496585}
   - component: {fileID: 8144443259667496584}
-  - component: {fileID: 8144443259667496597}
   - component: {fileID: 2376287336678407454}
   m_Layer: 0
   m_Name: TestInteractable
@@ -148,23 +147,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8144443259667496596}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8144443259667496597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144443259667496596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84ab47eae60fae4486b2b53e564728f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionLoadTime: 3
-  progressBar: {fileID: 8230814856750092273}
-  canvas: {fileID: 3523941553437649117}
-  tag: Bird
-  objectToDestroy: {fileID: 2784160854552915015}
 --- !u!65 &2376287336678407454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -397,12 +379,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426b44a7575f71e479fab4f4e8431989, type: 3}
---- !u!1 &2784160854552915015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989,
-    type: 3}
-  m_PrefabInstance: {fileID: 2784680625423294483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2786188456171451349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989,

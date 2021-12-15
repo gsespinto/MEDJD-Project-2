@@ -1,37 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Interactable : MonoBehaviour
+﻿namespace GoogleVR.HelloVR
 {
-    [SerializeField] protected float interactionLoadTime = 1.0f; // Time to load interaction function
-    protected float currentInteractionLoadTime;
+    using UnityEngine;
+    using UnityEngine.EventSystems;
 
-    // Start is called before the first frame update
-    void Awake()
+    /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
+    [RequireComponent(typeof(Collider))]
+    public class Interactable : MonoBehaviour
     {
-        currentInteractionLoadTime = interactionLoadTime;
-    }
 
-    ///<summary> Tick the interaction timer </summary> 
-    public virtual void LoadInteraction()
-    {
-        if (currentInteractionLoadTime <= 0)
+        public virtual void SetGazedAt(bool gazedAt)
+        {
             return;
-        
-        currentInteractionLoadTime -= Time.deltaTime;
-    }
+        }
 
-    ///<summary> Called when the loading of the interaction is cancelled </summary>
-    public virtual void StopLoadingInteraction()
-    {
-        return;
-    }
-    
-    ///<summary> Effect of the interaction </summary>
-    public virtual void Interaction()
-    {
-        if (currentInteractionLoadTime > 0)
+        public virtual void Reset()
+        {
             return;
+        }
+
+        /// <summary>Calls the Recenter event.</summary>
+        public void Recenter()
+        {
+#if !UNITY_EDITOR
+            GvrCardboardHelpers.Recenter();
+#else
+            if (GvrEditorEmulator.Instance != null)
+            {
+                GvrEditorEmulator.Instance.Recenter();
+            }
+#endif  // !UNITY_EDITOR
+        }
+
+        public virtual void Interaction(BaseEventData eventData)
+        {
+            return;
+        }
+
+        protected bool IsInteractInput(BaseEventData eventData)
+        {
+            // Only trigger on left input button, which maps to
+            // Daydream controller TouchPadButton and Trigger buttons.
+            
+            PointerEventData ped = eventData as PointerEventData;
+            if (ped == null)
+                return false;
+            
+            return ped.button == PointerEventData.InputButton.Left;
+        }
+
+        private void Start()
+        {
+            SetGazedAt(false);
+        }
     }
 }
