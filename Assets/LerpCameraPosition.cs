@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class LerpCameraPosition : MonoBehaviour
 {
-    [SerializeField] private float threshold = 0.1f;
-    [SerializeField] private float speed = 2.0f;
+    [SerializeField] private float maxSpeed = 2.0f;
+    private float currentSpeed;
+    [SerializeField] private float acceleration = 1f;
 
     private void Update()
     {
-        if (this.transform.localPosition.magnitude > threshold)
+        if (this.transform.localPosition.magnitude > currentSpeed * Time.deltaTime)
         {
-            this.transform.localPosition = -this.transform.localPosition.normalized * speed * Time.deltaTime;
-            Debug.Log(this.transform.localPosition);
+            if (currentSpeed < maxSpeed)
+                currentSpeed += acceleration * Time.deltaTime;
+            
+            this.transform.localPosition += -this.transform.localPosition.normalized * currentSpeed * Time.deltaTime;
+        }
+        else
+        {
+            currentSpeed = 0;
         }
     }
 }

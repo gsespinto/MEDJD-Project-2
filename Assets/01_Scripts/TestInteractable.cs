@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class TestInteractable : Interactable
 {
+    [Header("Interaction")] 
+    [SerializeField] private GameObject objToDestroy;
     public override void OnInteraction(BaseEventData eventData)
     {
         if (!CanInteract())
@@ -16,7 +18,8 @@ public class TestInteractable : Interactable
         base.OnInteraction(eventData);
         if (!IsInteractInput(eventData))
             return;
-
-        Destroy(this.gameObject);
+        if (objToDestroy)
+            Destroy(objToDestroy);
+        Destroy(this);
     }
 }

@@ -6,7 +6,8 @@
 
     public class TransitionInteractable : Interactable
     {
-        [Header("References")]
+        [Header("References")] 
+        [SerializeField] private LerpCameraPosition lerpCamera;
         [SerializeField] private GameObject oldPlayerController;
         [SerializeField] private GameObject newPlayerController;
         [SerializeField] private Transform newCameraContainer;
@@ -29,7 +30,7 @@
                 return;
 
             newPlayerController.SetActive(true);
-            Camera.main.transform.SetParent(newCameraContainer, true);
+            lerpCamera.transform.SetParent(newCameraContainer, true);
             
             Destroy(oldPlayerController);
             Destroy(this.gameObject);

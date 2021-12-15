@@ -187,9 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84ab47eae60fae4486b2b53e564728f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLoadTime: 1
+  interactionLoadTime: 5
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
+  objToDestroy: {fileID: 2784160854552915015}
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +410,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426b44a7575f71e479fab4f4e8431989, type: 3}
+--- !u!1 &2784160854552915015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989,
+    type: 3}
+  m_PrefabInstance: {fileID: 2784680625423294483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2786188456171451349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989,
