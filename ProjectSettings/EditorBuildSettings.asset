@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/00_Scenes/SphericWorld.unity
+    guid: 075cd3a90a451f541a76a45af21fe3fa
   m_configObjects: {}

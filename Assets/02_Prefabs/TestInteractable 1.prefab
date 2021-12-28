@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9045028554838003014}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2069021678755945594}
   - component: {fileID: 6812436464392247565}
   - component: {fileID: 8230814856750092273}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,8 +234,12 @@ MonoBehaviour:
   interactionLoadTime: 1
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
+  lerpCamera: {fileID: 0}
   oldPlayerController: {fileID: 0}
   newPlayerController: {fileID: 0}
+  newCameraContainer: {fileID: 0}
+  objsToDestroy:
+  - {fileID: 3514537866149481618}
 --- !u!1 &8286129075969345396
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +329,7 @@ GameObject:
   - component: {fileID: 607662513002376525}
   - component: {fileID: 3523941553437649117}
   - component: {fileID: 7727442344833536625}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.537}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3523941553437649117

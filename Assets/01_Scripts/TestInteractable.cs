@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class TestInteractable : Interactable
 {
     [Header("Interaction")] 
-    [SerializeField] private GameObject objToDestroy;
+    [SerializeField] private GameObject[] objsToDestroy;
+    
     public override void OnInteraction(BaseEventData eventData)
     {
         if (!CanInteract())
@@ -18,8 +19,12 @@ public class TestInteractable : Interactable
         base.OnInteraction(eventData);
         if (!IsInteractInput(eventData))
             return;
-        if (objToDestroy)
-            Destroy(objToDestroy);
+
+        foreach (GameObject obj in objsToDestroy)
+        {
+            Destroy(obj);
+        }
+        
         Destroy(this);
     }
 }

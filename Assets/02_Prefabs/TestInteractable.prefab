@@ -190,7 +190,8 @@ MonoBehaviour:
   interactionLoadTime: 5
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
-  objToDestroy: {fileID: 2784160854552915015}
+  objsToDestroy:
+  - {fileID: 2784160854552915015}
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0
