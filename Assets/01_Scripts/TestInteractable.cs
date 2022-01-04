@@ -20,6 +20,8 @@ public class TestInteractable : Interactable
         if (!IsInteractInput(eventData))
             return;
 
+        GameObject.FindObjectOfType<ScoreScript>().ChangeScore(+1);
+        
         foreach (GameObject obj in objsToDestroy)
         {
             Destroy(obj);
