@@ -46,12 +46,7 @@ namespace GoogleVR.HelloVR
             if (loadCanvas) loadCanvas.gameObject.SetActive(gazedAt);
         }
 
-        public virtual void Reset()
-        {
-            return;
-        }
-
-        /// <summary>Calls the Recenter event.</summary>
+        /// <summary> Calls the Recenter event. </summary>
         public void Recenter()
         {
 #if !UNITY_EDITOR
@@ -127,8 +122,6 @@ namespace GoogleVR.HelloVR
             entry.eventID = EventTriggerType.PointerClick;
             entry.callback.AddListener((data) => {OnInteraction(data);});
             eventTrigger.triggers.Add(entry);
-            
-            // Debug.Log("Interactable set up.", this.gameObject);
         }
     }
 }

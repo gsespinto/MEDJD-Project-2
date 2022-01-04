@@ -7,6 +7,8 @@ public class FlightMovement : MonoBehaviour
     [SerializeField] private float movementSpeed = 1.0f;
     [SerializeField] private Camera cam;
     [SerializeField] private float flyHeight;
+    [SerializeField] private float rotationSensivity = 0.1f;
+    private float turnAngle;
 
     void Start()
     {
@@ -27,18 +29,17 @@ public class FlightMovement : MonoBehaviour
         if (!cam)
             return;
 
-        // Get camera flored forward vector
-        Vector3 flooredCamForward = this.transform.InverseTransformVector(cam.transform.forward);
-        flooredCamForward.y = 0;
-        flooredCamForward = this.transform.TransformVector(flooredCamForward).normalized;
-
         // Calculate new position around world center
-        Vector3 newPos = this.transform.position + flooredCamForward * movementSpeed * Time.deltaTime;
+        Vector3 newPos = this.transform.position + this.transform.forward * movementSpeed * Time.deltaTime;
         Vector3 gravityUp = newPos.normalized;
         newPos = Vector3.zero + gravityUp * flyHeight;
         this.transform.position = newPos;
 
+        // Turn controller according with z rotation of camera
+        turnAngle = cam.transform.localRotation.z * rotationSensivity;
+
         // Calculate rotation
+        this.transform.RotateAround(newPos, gravityUp, turnAngle * Time.deltaTime);
         this.transform.rotation = Quaternion.FromToRotation(transform.up, gravityUp) * transform.rotation;
     }
 }

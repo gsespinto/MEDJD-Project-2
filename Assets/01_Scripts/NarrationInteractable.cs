@@ -18,19 +18,23 @@ namespace GoogleVR.HelloVR
 
         public override void OnInteraction(BaseEventData eventData)
         {
+            // null ref protection
             if(!narrationComponent || narrations.Length <= 0)
                 return;
 
+            // Only interact if the interaction is loaded
             if (!CanInteract())
                 return;
 
+            // Add the narrations to the queue
             foreach (FNarration n in narrations)
             {
                 narrationComponent.PlayNarration(n);
             }
 
             base.OnInteraction(eventData);
-
+            
+            // Destroy this script
             Destroy(this);
         }
     }

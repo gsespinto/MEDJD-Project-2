@@ -190,10 +190,10 @@ MonoBehaviour:
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
   narrations:
-  - clip: {fileID: 8300000, guid: f1de4e67910a3493e9ba31c4745c9bfc, type: 3}
-    caption: Hey
-  - clip: {fileID: 8300000, guid: c9ad5fd9c2ab042098d2625d6cde66cd, type: 3}
-    caption: this is a test
+  - clip: {fileID: 8300000, guid: b7fabc1dae3f5b54086823e4be88e4d2, type: 3}
+    caption: "Isto \xE9 um teste."
+  - clip: {fileID: 8300000, guid: b7a21f1dcfdf6d54a8e4afc02d002df0, type: 3}
+    caption: Teste 1 2 1 2 Teste 1 2 3
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0

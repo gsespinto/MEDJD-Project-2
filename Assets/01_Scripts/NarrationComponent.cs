@@ -5,14 +5,14 @@ using TMPro;
 public class NarrationComponent : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private TextMeshProUGUI  text;
+    [SerializeField] private TextMeshProUGUI  captionText;
     private List<FNarration> playedClips = new List<FNarration>();
     private List<FNarration> clipsQueue = new List<FNarration>();
     
     private void Start()
     {
-        if (text)
-            text.gameObject.SetActive(false);
+        if (captionText)
+            captionText.gameObject.SetActive(false);
     }
 
     /// <summary> Checks if the given clip as been played, if not queues it to play </summary>
@@ -44,9 +44,13 @@ public class NarrationComponent : MonoBehaviour
         if (!audioSource)
             return;
         
-        if (!audioSource.isPlaying && text.gameObject.activeInHierarchy)
+        // If no narration isn't playing and caption is active
+        // Hide caption
+        if (!audioSource.isPlaying
+        && captionText 
+        && captionText.gameObject.activeInHierarchy)
         {
-            text.gameObject.SetActive(false);
+            captionText.gameObject.SetActive(false);
             return;
         }
 
@@ -62,12 +66,15 @@ public class NarrationComponent : MonoBehaviour
         // And remove it from the queue
         audioSource.PlayOneShot(clipsQueue[0].clip);
 
-        if (text)
+        // If the caption text ref is valid
+        // Set text to clip's caption and activate object
+        if (captionText)
         {
-            text.text = clipsQueue[0].caption;
-            text.gameObject.SetActive(true);
+            captionText.text = clipsQueue[0].caption;
+            captionText.gameObject.SetActive(true);
         }
 
+        // Remove clip from queue
         clipsQueue.RemoveAt(0);
     }
 }
