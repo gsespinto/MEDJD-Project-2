@@ -16,10 +16,6 @@ public class TestInteractable : Interactable
         if (!CanInteract())
             return;
 
-        base.OnInteraction(eventData);
-        if (!IsInteractInput(eventData))
-            return;
-
         GameObject.FindObjectOfType<ScoreScript>().ChangeScore(+1);
         
         foreach (GameObject obj in objsToDestroy)
@@ -28,5 +24,7 @@ public class TestInteractable : Interactable
         }
         
         Destroy(this);
+        
+        base.OnInteraction(eventData);
     }
 }

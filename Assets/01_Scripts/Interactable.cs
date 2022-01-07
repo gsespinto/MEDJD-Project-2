@@ -1,16 +1,21 @@
-﻿using System;
-
-namespace GoogleVR.HelloVR
-{
-    using UnityEngine;
+﻿    using UnityEngine;
     using UnityEngine.EventSystems;
     using UnityEngine.UI;
 
     /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(EventTrigger))]
+    [RequireComponent(typeof(AudioSource))]
     public class Interactable : MonoBehaviour
     {
+        [Header("Audio")]
+        [SerializeField] private AudioClip onEnterSFX;
+        [SerializeField] private AudioClip onInteractionSFX;
+        AudioSource audioSource;
+
+        [Header("Setup")]
+        [SerializeField] private bool setupEventTriggers = true;
+
         [Header("Interaction Loading")]
         [SerializeField] protected float interactionLoadTime = 1.0f; // Time to load interaction function
         protected float currentInteractionLoadTime; // Current load time
@@ -22,13 +27,15 @@ namespace GoogleVR.HelloVR
 
         private void Awake()
         {
-            SetupInputEvents();
+            if (setupEventTriggers)
+                SetupInputEvents();
         }
 
         protected virtual void Start()
         {
             SetGazedAt(false);
             currentInteractionLoadTime = interactionLoadTime;
+            audioSource = this.GetComponent<AudioSource>();
         }
         
         private void Update()
@@ -37,7 +44,7 @@ namespace GoogleVR.HelloVR
         }
         
         // Set if the interactable is gazed at
-        public virtual void SetGazedAt(bool gazedAt)
+        protected virtual void SetGazedAt(bool gazedAt)
         {
             // Engages interaction loading
             loadingInteraction = gazedAt;
@@ -46,36 +53,10 @@ namespace GoogleVR.HelloVR
             if (loadCanvas) loadCanvas.gameObject.SetActive(gazedAt);
         }
 
-        /// <summary> Calls the Recenter event. </summary>
-        public void Recenter()
-        {
-#if !UNITY_EDITOR
-            GvrCardboardHelpers.Recenter();
-#else
-            if (GvrEditorEmulator.Instance != null)
-            {
-                GvrEditorEmulator.Instance.Recenter();
-            }
-#endif  // !UNITY_EDITOR
-        }
-
         /// <summary> Called when the player interacts with this object </summary>
         public virtual void OnInteraction(BaseEventData eventData)
         {
             return;
-        }
-
-        /// <summary> Returns true with the interact input was given </summary>
-        protected bool IsInteractInput(BaseEventData eventData)
-        {
-            // Only trigger on left input button, which maps to
-            // Daydream controller TouchPadButton and Trigger buttons.
-            
-            PointerEventData ped = eventData as PointerEventData;
-            if (ped == null)
-                return false;
-            
-            return ped.button == PointerEventData.InputButton.Left;
         }
 
         /// <summary> If the interaction is loading, decreases load time </summary>
@@ -100,16 +81,29 @@ namespace GoogleVR.HelloVR
             return currentInteractionLoadTime <= 0;
         }
 
+        private void PlaySFX(AudioClip clip)
+        {
+            if(!clip)
+                return;
+
+            audioSource.PlayOneShot(clip);
+        }
+
         /// <summary> Sets input events to handle make this object interactable </summary>
         private void SetupInputEvents()
         {
             EventTrigger eventTrigger = this.GetComponent<EventTrigger>();
 
+
             // Set up on pointer enter event
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerEnter;
             entry.callback.AddListener((data) => {SetGazedAt(true);});
+            entry.callback.AddListener((data) => {PlaySFX(onEnterSFX);});
+            if (eventTrigger.triggers.Contains(entry))
+                Debug.Log("What?");
             eventTrigger.triggers.Add(entry);
+
             
             // Set up on pointer exit event
             entry = new EventTrigger.Entry();
@@ -121,7 +115,7 @@ namespace GoogleVR.HelloVR
             entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerClick;
             entry.callback.AddListener((data) => {OnInteraction(data);});
+            entry.callback.AddListener((data) => {PlaySFX(onInteractionSFX);});
             eventTrigger.triggers.Add(entry);
         }
     }
-}

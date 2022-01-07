@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GoogleVR.HelloVR
-{
-    public class NarrationInteractable : Interactable
+public class NarrationInteractable : Interactable
     {
         [SerializeField] private FNarration[] narrations;
         NarrationComponent narrationComponent;
@@ -38,4 +36,3 @@ namespace GoogleVR.HelloVR
             Destroy(this);
         }
     }
-}
