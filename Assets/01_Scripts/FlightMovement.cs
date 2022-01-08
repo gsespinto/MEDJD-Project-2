@@ -8,8 +8,10 @@ public class FlightMovement : MonoBehaviour
     [SerializeField] private Camera cam;
 
     [Header("Movement Values")]
-    [SerializeField] private float movementSpeed = 1.0f;
     [SerializeField] private float flyHeight;
+    [SerializeField] private float movementSpeed = 1.0f;
+    private float currentMovementSpeed;
+    [SerializeField] private float acceleration = 1.0f;
     [SerializeField] private float rotationSensivity = 0.1f;
     [SerializeField] private float rotationDeadAngle = 10f;
     private float turnAngle;
@@ -33,6 +35,15 @@ public class FlightMovement : MonoBehaviour
     void Update()
     {
         WindSFX();
+        Accelerate();
+    }
+
+    void Accelerate()
+    {            
+        if (currentMovementSpeed >= movementSpeed)
+            return;
+        
+        currentMovementSpeed += acceleration * Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -48,7 +59,7 @@ public class FlightMovement : MonoBehaviour
             return;
 
         // Calculate new position around world center
-        Vector3 newPos = this.transform.position + this.transform.forward * movementSpeed * Time.deltaTime;
+        Vector3 newPos = this.transform.position + this.transform.forward * currentMovementSpeed * Time.deltaTime;
         Vector3 gravityUp = newPos.normalized;
         newPos = Vector3.zero + gravityUp * flyHeight;
         this.transform.position = newPos;

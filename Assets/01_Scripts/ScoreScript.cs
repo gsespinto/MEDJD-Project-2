@@ -6,8 +6,10 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] int targetScore = 5;
+    string targetScoreText;
     int currentScore = 0;
-    [SerializeField] FlightMovement flightMovement;
+    [SerializeField] int nextScene = 0;
 
     void Start()
     {
@@ -17,9 +19,9 @@ public class ScoreScript : MonoBehaviour
     public void ChangeScore(int amount)
     {
         currentScore += amount;
-        if (currentScore < 10)
-            scoreText.text = "x 0" + currentScore;
-        else
-            scoreText.text = "x " + currentScore;
+        scoreText.text = "x " + currentScore + " / " + targetScore;
+
+        if (currentScore >= targetScore)
+            GameObject.FindObjectOfType<SceneLoader>().LoadScene(nextScene);
     }
 }
