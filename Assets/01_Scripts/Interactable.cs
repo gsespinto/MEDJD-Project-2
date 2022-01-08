@@ -5,13 +5,12 @@
     /// <summary>Controls interactable teleporting objects in the Demo scene.</summary>
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(EventTrigger))]
-    [RequireComponent(typeof(AudioSource))]
     public class Interactable : MonoBehaviour
     {
         [Header("Audio")]
+        [SerializeField] AudioSource audioSource;
         [SerializeField] private AudioClip onEnterSFX;
         [SerializeField] private AudioClip onInteractionSFX;
-        AudioSource audioSource;
 
         [Header("Setup")]
         [SerializeField] private bool setupEventTriggers = true;
@@ -83,7 +82,7 @@
 
         private void PlaySFX(AudioClip clip)
         {
-            if(!clip)
+            if(!audioSource || !clip)
                 return;
 
             audioSource.PlayOneShot(clip);
