@@ -101,7 +101,7 @@ public class GvrReticlePointer : GvrBasePointer
     public override void OnPointerEnter(RaycastResult raycastResultResult, bool isInteractive)
     {
         Interactable interactable = raycastResultResult.gameObject.GetComponent<Interactable>();
-        if (!interactable || !interactable.CanInteract())
+        if (interactable && !interactable.CanInteract())
         {
             SetPointerTarget(raycastResultResult.worldPosition, false);
             return;
