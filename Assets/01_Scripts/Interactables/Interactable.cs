@@ -9,8 +9,8 @@
     {
         [Header("Audio")]
         [SerializeField] AudioSource audioSource;
-        [SerializeField] private AudioClip onEnterSFX;
-        [SerializeField] private AudioClip onInteractionSFX;
+        [SerializeField] private AudioClip[] onEnterSFXs;
+        [SerializeField] private AudioClip[] onInteractionSFXs;
 
         [Header("Setup")]
         [SerializeField] private bool setupEventTriggers = true;
@@ -55,7 +55,7 @@
         /// <summary> Called when the player interacts with this object </summary>
         public virtual void OnInteraction(BaseEventData eventData)
         {
-            PlaySFX(onInteractionSFX);
+            PlaySFX(onInteractionSFXs);
             return;
         }
 
@@ -92,6 +92,17 @@
             audioSource.PlayOneShot(clip);
         }
 
+        /// <summary> Plays given audio clip once </summary>
+        private void PlaySFX(AudioClip[] clips)
+        {
+            // Null ref protection
+            if(clips.Length <= 0)
+                return;
+
+            // Play SFX
+            PlaySFX(clips[Random.Range(0, clips.Length - 1)]);
+        }
+
         /// <summary> Sets input events to handle make this object interactable </summary>
         private void SetupInputEvents()
         {
@@ -102,7 +113,7 @@
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerEnter;
             entry.callback.AddListener((data) => {SetGazedAt(true);});
-            entry.callback.AddListener((data) => {PlaySFX(onEnterSFX);});
+            entry.callback.AddListener((data) => {PlaySFX(onEnterSFXs);});
             eventTrigger.triggers.Add(entry);
 
             

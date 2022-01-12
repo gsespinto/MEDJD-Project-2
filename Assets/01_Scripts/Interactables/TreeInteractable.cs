@@ -6,7 +6,7 @@ public class TreeInteractable : Interactable
 
     [Header("Interaction")]
     [SerializeField] private Object[] objsToDestroy;
-    [SerializeField] private AudioClip shoutClip;
+    [SerializeField] private AudioClip[] shoutClips;
 
     public override void OnInteraction(BaseEventData eventData)
     {
@@ -14,8 +14,8 @@ public class TreeInteractable : Interactable
             return;
 
         GameObject.FindObjectOfType<ScoreScript>().ChangeScore(+1);
-        if(shoutClip)
-            GameObject.FindObjectOfType<NarrationComponent>().PlaySFX(shoutClip);
+        if(shoutClips.Length >= 0)
+            GameObject.FindObjectOfType<NarrationComponent>().PlaySFX(shoutClips[Random.Range(0, shoutClips.Length)]);
 
         foreach (Object obj in objsToDestroy)
         {

@@ -4,29 +4,34 @@ using TMPro;
 
 public class NarrationComponent : MonoBehaviour
 {
-    [SerializeField] private AudioSource narrationSource;
+    [SerializeField] private AudioSource[] narrationSources;
+    private AudioSource currentNarrationSource;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private TextMeshProUGUI  captionText;
     private List<FNarration> playedClips = new List<FNarration>();
     [SerializeField] private List<FNarration> clipsQueue = new List<FNarration>();
+    private Color captionColor = Color.white;
     
     private void Start()
     {
         if (captionText)
+        {
             captionText.gameObject.SetActive(false);
+            captionColor = captionText.color;
+        }
     }
 
     /// <summary> Checks if the given clip as been played, if not queues it to play </summary>
     public void PlayNarration(FNarration narration)
     {
         // Null ref protection
-        if (!narrationSource)
+        if (narrationSources.Length <= 0)
             return;
         
         // If this clip as been played, do nothing
         if(playedClips.Contains(narration))
             return;
-        
+
         // Queue clip to play
         // Add clip to played clips
         clipsQueue.Add(narration);
@@ -42,14 +47,13 @@ public class NarrationComponent : MonoBehaviour
     private void PlayQueuedClips()
     {
         // Null ref protection
-        if (!narrationSource)
+        if (narrationSources.Length <= 0)
             return;
-        
+
         // If no narration isn't playing and caption is active
         // Hide caption
-        if (!narrationSource.isPlaying
-        && captionText 
-        && captionText.gameObject.activeInHierarchy)
+        if (currentNarrationSource && !currentNarrationSource.isPlaying
+        && captionText && captionText.gameObject.activeInHierarchy)
         {
             captionText.gameObject.SetActive(false);
             return;
@@ -60,18 +64,27 @@ public class NarrationComponent : MonoBehaviour
             return;
 
         // If the audio source is playing, do nothing
-        if (narrationSource.isPlaying)
+        if (currentNarrationSource != null && currentNarrationSource.isPlaying)
             return;
-        
+
+        // Set narration source that'll play
+        currentNarrationSource = narrationSources[Mathf.Clamp(clipsQueue[0].sourceIndex, 0, narrationSources.Length - 1)];
+
         // Play first queued clip
         // And remove it from the queue
-        narrationSource.PlayOneShot(clipsQueue[0].clip);
+        currentNarrationSource.PlayOneShot(clipsQueue[0].clip);
 
         // If the caption text ref is valid
         // Set text to clip's caption and activate object
         if (captionText)
         {
-            captionText.text = clipsQueue[0].caption;
+            string ownerText = "";
+            if (clipsQueue[0].owner != "")
+            {
+                ownerText = "<color=#" + ColorUtility.ToHtmlStringRGB(clipsQueue[0].ownerColor) + "><b>" + clipsQueue[0].owner + ":</b> ";
+            }
+
+            captionText.text = ownerText + "<color=#" + ColorUtility.ToHtmlStringRGB(captionColor) + ">" + clipsQueue[0].caption;
             captionText.gameObject.SetActive(true);
         }
 
@@ -90,8 +103,11 @@ public class NarrationComponent : MonoBehaviour
 }
 
 [System.Serializable]
-public struct  FNarration
+public struct FNarration
 {
     public AudioClip clip;
     public string caption;
+    public int sourceIndex;
+    public string owner;
+    public Color ownerColor;
 }

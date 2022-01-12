@@ -286,15 +286,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6592110492901373966}
-  onEnterSFX: {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
-  onInteractionSFX: {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
+  onEnterSFXs:
+  - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
+  onInteractionSFXs:
+  - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 5
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
   objsToDestroy:
   - {fileID: 2784160854552915015}
-  shoutClip: {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
+  shoutClips:
+  - {fileID: 8300000, guid: 42d7acd293e962d44b49b461af612915, type: 3}
+  - {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0

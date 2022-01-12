@@ -49,13 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba058c8478262148a75af391f9f0b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
+  narrationSources:
+  - {fileID: 2649991135431188836}
+  - {fileID: 0}
+  sfxSource: {fileID: 0}
   captionText: {fileID: 7198803690157438049}
-  clipsQueue:
-  - clip: {fileID: 8300000, guid: b7fabc1dae3f5b54086823e4be88e4d2, type: 3}
-    caption: "Isto \xE9 um teste."
-  - clip: {fileID: 8300000, guid: b7a21f1dcfdf6d54a8e4afc02d002df0, type: 3}
-    caption: Teste 1 2 Teste 1 2 3
+  clipsQueue: []
 --- !u!114 &5947544425796150862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +95,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6479627447736213019, guid: c15d2e458c5478d4c90861d68d8eb9b4,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

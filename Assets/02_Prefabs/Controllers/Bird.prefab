@@ -201,7 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba058c8478262148a75af391f9f0b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrationSource: {fileID: 2649991135431188836}
+  narrationSources:
+  - {fileID: 2649991135431188836}
   sfxSource: {fileID: 3222972409379775056}
   captionText: {fileID: 3445308661813332830}
   clipsQueue: []

@@ -366,8 +366,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4398227938058221164}
-  onEnterSFX: {fileID: 8300000, guid: 42d7acd293e962d44b49b461af612915, type: 3}
-  onInteractionSFX: {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
+  onEnterSFXs:
+  - {fileID: 8300000, guid: 42d7acd293e962d44b49b461af612915, type: 3}
+  onInteractionSFXs:
+  - {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 2
   loadImage: {fileID: 6338458873257133158}
