@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class FruitInteractable : Interactable
 {
     [Header("Interaction")]
     private ChildScript childScript;
+    [SerializeField] private List<GameObject> apples = new List<GameObject>();
 
     protected override void Start()
     {
@@ -29,7 +32,9 @@ public class FruitInteractable : Interactable
         if (!childScript)
             return false;
 
-        return currentInteractionLoadTime <= 0 && !childScript.HasFruit;
+        return currentInteractionLoadTime <= 0 && 
+                !childScript.HasFruit &&
+                apples.Count > 0;
     }
 
     public override void OnInteraction(BaseEventData eventData)
@@ -40,5 +45,11 @@ public class FruitInteractable : Interactable
         childScript.HasFruit = true;
 
         base.OnInteraction(eventData);
+
+        if (apples.Count <= 0)
+            return;
+
+        Destroy(apples[0]);
+        apples.RemoveAt(0);
     }
 }

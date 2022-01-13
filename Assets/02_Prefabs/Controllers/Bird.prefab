@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4480097505079773403}
-  - component: {fileID: 2124059293248913442}
+  - component: {fileID: 253610741083799999}
   - component: {fileID: 6199511238997552157}
   - component: {fileID: 5947544425796150862}
   - component: {fileID: 2649991135431188836}
@@ -166,7 +166,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2124059293248913442
+--- !u!114 &253610741083799999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,15 +175,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2628702931189246823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff9636c9f537bf0479e916e3ea9a4eeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 299345f8b3e8e7b428b495f5a572e2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 8520774628382645991}
-  flyHeight: 328
-  movementSpeed: 3.5
-  acceleration: 0.5
-  rotationSensivity: -125
-  rotationDeadAngle: 5
+  environment: {fileID: 0}
+  environmentRotationSpeed: 10
+  acceleration: 2.5
+  turnSensivity: -125
+  turnDeadAngle: 5
   windSource: {fileID: 5744365966296815736}
   minWindVolume: 0.1
   maxWindVolume: 0.75

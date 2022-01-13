@@ -7051,6 +7051,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 253610741083799999, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
+        type: 3}
+      propertyPath: environment
+      value: 
+      objectReference: {fileID: 1399149111}
     - target: {fileID: 328477640710181861, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7103,19 +7108,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2124059293248913442, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
-      propertyPath: acceleration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2124059293248913442, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
-        type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2124059293248913442, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
       propertyPath: flyHeight
       value: 335
       objectReference: {fileID: 0}
+    - target: {fileID: 2124059293248913442, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
+        type: 3}
+      propertyPath: planet
+      value: 
+      objectReference: {fileID: 1399149111}
+    - target: {fileID: 2124059293248913442, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
+        type: 3}
+      propertyPath: environment
+      value: 
+      objectReference: {fileID: 1399149111}
     - target: {fileID: 2436354745994100059, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7194,7 +7204,7 @@ PrefabInstance:
     - target: {fileID: 4480097505079773403, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 328
+      value: 340.89
       objectReference: {fileID: 0}
     - target: {fileID: 4480097505079773403, guid: 0c43a2c27df5dcd44b9cc188e1cb4927,
         type: 3}
