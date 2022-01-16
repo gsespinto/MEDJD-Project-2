@@ -14,16 +14,19 @@ public class Interactable : MonoBehaviour
     [SerializeField] private AudioClip[] onInteractionSFXs;
 
     [Header("Setup")]
-    [SerializeField] private bool setupEventTriggers = true;
+    [SerializeField] private bool setupEventTriggers = true; // Set interaction event triggers through code?
 
     [Header("Interaction Loading")]
     [SerializeField] protected float interactionLoadTime = 1.0f; // Time to load interaction function
     protected float currentInteractionLoadTime; // Current load time
     private bool loadingInteraction = false; // Is the interactable loading
+    [SerializeField] private bool rechargeInteraction = false; // Is the load time supposed to reset after interaction?
 
     [Header("Visual Components")]
     [SerializeField] private Image loadImage;
     [SerializeField] private Canvas loadCanvas;
+    [SerializeField] private GameObject interactionVfxPrefab;
+    [SerializeField] private Transform vfxTarget;
   #endregion
 
     private void Awake()
@@ -39,7 +42,7 @@ public class Interactable : MonoBehaviour
         audioSource = this.GetComponent<AudioSource>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         LoadInteraction();
     }
@@ -57,8 +60,26 @@ public class Interactable : MonoBehaviour
     /// <summary> Called when the player interacts with this object </summary>
     public virtual void OnInteraction(BaseEventData eventData)
     {
+        // Play interaction sfx
         PlaySFX(onInteractionSFXs);
-        return;
+
+        // Recharge load time if it's supposed to
+        if (rechargeInteraction)
+        {
+            currentInteractionLoadTime = interactionLoadTime;
+            loadingInteraction = false;
+        }
+
+        // Spawn interaction vfx if valid
+        if (interactionVfxPrefab)
+        {
+            // either spawn at set vfx transform
+            if (vfxTarget)
+                GameObject.Instantiate(interactionVfxPrefab, vfxTarget.transform.position, vfxTarget.transform.rotation, this.transform.parent);
+            // or at interactable position
+            else
+                GameObject.Instantiate(interactionVfxPrefab, this.transform.position, this.transform.rotation, this.transform.parent);
+        }
     }
 
     /// <summary> If the interaction is loading, decreases load time </summary>
@@ -87,8 +108,18 @@ public class Interactable : MonoBehaviour
     private void PlaySFX(AudioClip clip)
     {
         // Null ref protection
-        if (!audioSource || !clip)
+        if (!audioSource)
+        {
+            Debug.LogWarning("Missing audio source reference.", this);
             return;
+        }
+
+        // Null ref protection
+        if (!clip)
+        {
+            Debug.LogWarning("Invalid audio clip reference given to PlaySFX.", this);
+            return;
+        }
 
         // Play SFX
         audioSource.PlayOneShot(clip);
@@ -97,7 +128,8 @@ public class Interactable : MonoBehaviour
     /// <summary> Plays random audio clip from given array </summary>
     private void PlaySFX(AudioClip[] clips)
     {
-        // Null ref protection
+        // If there were no clips given
+        // Do nothing
         if (clips.Length <= 0)
             return;
 

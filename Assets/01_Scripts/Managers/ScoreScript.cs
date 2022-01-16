@@ -5,11 +5,9 @@ using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreText;
+    public int objectiveIndex;
     [SerializeField] int targetScore = 5;
-    string targetScoreText;
     int currentScore = 0;
-    [SerializeField] int nextScene = 0;
 
     void Start()
     {
@@ -20,14 +18,20 @@ public class ScoreScript : MonoBehaviour
     /// <summary> Change score by given amount, if it has reached target score, load next scene </summary>
     public void ChangeScore(int amount)
     {
+        ObjectiveComponent objectiveComponent = GameObject.FindObjectOfType<ObjectiveComponent>();
+
+        if (!objectiveComponent)
+            return;
+
         // Change score by given amount
         currentScore += amount;
         // Update visuals
-        scoreText.text = "x " + currentScore + " / " + targetScore;
+        string info = "[" + currentScore + " / " + targetScore + "]";
+        GameObject.FindObjectOfType<ObjectiveComponent>().UpdateObjectiveAddedInformation(objectiveIndex, info);
 
         // If score has reached its target value
-        // Load next scene
+        // Complete objective
         if (currentScore >= targetScore)
-            GameObject.FindObjectOfType<SceneLoader>().LoadScene(nextScene);
+            Objective.CompleteObjective(objectiveIndex);
     }
 }

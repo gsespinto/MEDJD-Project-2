@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class TestInteractable : Interactable
 {
-    [Header("Interaction")] 
+    [Header("Interaction")]
+    [SerializeField] private float destroyTimer = 0;
     [SerializeField] private Object[] objsToDestroy;
     
     public override void OnInteraction(BaseEventData eventData)
@@ -15,7 +16,7 @@ public class TestInteractable : Interactable
         
         foreach (Object obj in objsToDestroy)
         {
-            Destroy(obj);
+            Destroy(obj, destroyTimer);
         }
         
         Destroy(this);

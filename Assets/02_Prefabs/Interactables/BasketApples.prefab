@@ -73,15 +73,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 0
+  rechargeInteraction: 0
   loadImage: {fileID: 0}
   loadCanvas: {fileID: 0}
-  apples:
-  - {fileID: 2717391257913451787}
+  interactionVfxPrefab: {fileID: 0}
+  vfxTarget: {fileID: 0}
+  itemToGive: 1
+  destroyTimer: 0
+  objectsToDestroy:
   - {fileID: 6223586467775556276}
-  - {fileID: 8091713869691167301}
+  - {fileID: 2717391257913451787}
+  - {fileID: 3717651551073622763}
   - {fileID: 1207110841493938910}
   - {fileID: 5376077522426014243}
-  - {fileID: 3717651551073622763}
+  - {fileID: 8091713869691167301}
 --- !u!114 &2567897737237046629
 MonoBehaviour:
   m_ObjectHideFlags: 0

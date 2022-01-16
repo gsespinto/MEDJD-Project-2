@@ -114,6 +114,11 @@ public class NarrationComponent : MonoBehaviour
 
         sfxSource.PlayOneShot(clip);
     }
+
+    public bool HasFinishedPlaying()
+    {
+        return clipsQueue.Count <= 0 && !currentNarrationSource;
+    }
 }
 
 [System.Serializable]

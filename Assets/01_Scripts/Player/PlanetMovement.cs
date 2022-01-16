@@ -25,7 +25,7 @@ public class PlanetMovement : MonoBehaviour
     // ---------------- SFX ----------------- //
 
     [Header("Audio")]
-    [SerializeField] private AudioSource windSource;
+    [SerializeField] private AudioSource[] flyingSources;
 
     [SerializeField, Range(0, 1)] private float minWindVolume = 0f;
     [SerializeField, Range(0, 1)] private float maxWindVolume = 1f;
@@ -96,15 +96,19 @@ public class PlanetMovement : MonoBehaviour
     void WindSFX()
     {
         // Null ref protection
-        if (!windSource)
+        if (flyingSources.Length <= 0)
             return;
 
         // Set volume according to turn angle
         float volume = Mathf.Clamp(Mathf.Abs(turnAngle) / maxWindRotationValue, minWindVolume, maxWindVolume);
-        windSource.volume = volume;
-
         // Set pan value according to volume and turn angle
         float pan = Mathf.Clamp(volume * Mathf.Sign(turnAngle), -maxWindSide, maxWindSide);
-        windSource.panStereo = pan;
+
+        foreach(AudioSource source in flyingSources)
+        {
+            source.volume = volume;
+            source.panStereo = pan;
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class NarrationInteractable : Interactable
 {
     [SerializeField] private FNarration[] narrations;
-    NarrationComponent narrationComponent;
+    protected NarrationComponent narrationComponent;
 
     protected override void Start()
     {
@@ -16,9 +16,20 @@ public class NarrationInteractable : Interactable
 
     public override void OnInteraction(BaseEventData eventData)
     {
-        // null ref protection
-        if (!narrationComponent || narrations.Length <= 0)
+        // Null ref protection
+        if (!narrationComponent)
+        {
+            Debug.LogWarning("Missing narration component reference.", this);
             return;
+        }
+
+        // Null ref protection
+        if (narrations.Length <= 0)
+        {
+            Debug.LogWarning("Narration array empty.", this);
+            return;
+        }
+
 
         // Only interact if the interaction is loaded
         if (!CanInteract())
@@ -31,8 +42,5 @@ public class NarrationInteractable : Interactable
         }
 
         base.OnInteraction(eventData);
-
-        // Destroy this script
-        Destroy(this);
     }
 }

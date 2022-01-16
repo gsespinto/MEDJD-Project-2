@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 public class TreeInteractable : Interactable
 {
-
-    [Header("Interaction")]
+    [Header("Interaction")] 
+    [SerializeField] private float destroyTimer = 0;
     [SerializeField] private Object[] objsToDestroy;
     [SerializeField] private AudioClip[] shoutClips;
 
@@ -19,7 +19,7 @@ public class TreeInteractable : Interactable
 
         foreach (Object obj in objsToDestroy)
         {
-            Destroy(obj);
+            Destroy(obj, destroyTimer);
         }
 
         Destroy(this);

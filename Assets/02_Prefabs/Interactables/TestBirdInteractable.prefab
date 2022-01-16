@@ -372,9 +372,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 2
+  rechargeInteraction: 0
   loadImage: {fileID: 6338458873257133158}
   loadCanvas: {fileID: 1524625084655952714}
-  objsToDestroy: []
+  interactionVfxPrefab: {fileID: 0}
+  vfxTarget: {fileID: 0}
+  acceptedItems: 01000000
+  objectiveIndex: 1
 --- !u!1001 &942589039031650633
 PrefabInstance:
   m_ObjectHideFlags: 0
