@@ -69,13 +69,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 1
-  rechargeInteraction: 0
+  rechargeInteraction: 1
   loadImage: {fileID: 8792240392966017800}
   loadCanvas: {fileID: 4096697454436545572}
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: 3b98b03c9facc4a498112266c9076805,
     type: 3}
   vfxTarget: {fileID: 6021973781661857216}
+  objectiveIndex: 1
   itemToGive: 2
+  acceptedItems: 02000000
   destroyTimer: 2
   objectsToDestroy:
   - {fileID: 2433485509070914988}

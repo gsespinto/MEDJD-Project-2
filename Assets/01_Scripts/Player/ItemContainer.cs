@@ -8,6 +8,11 @@ public class ItemContainer : MonoBehaviour
     private EItem item = EItem.NONE;
     [SerializeField] protected Image itemIcon;
 
+    private void Awake()
+    {
+        Item = EItem.NONE;
+    }
+
     public EItem Item 
     {
         get { return item; }
