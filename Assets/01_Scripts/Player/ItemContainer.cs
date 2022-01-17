@@ -7,22 +7,35 @@ public class ItemContainer : MonoBehaviour
 {
     private EItem item = EItem.NONE;
     [SerializeField] protected Image itemIcon;
+    private ItemInteractable giver;
 
     private void Awake()
     {
-        Item = EItem.NONE;
+        SetItem(EItem.NONE, null);
     }
 
     public EItem Item 
     {
         get { return item; }
         
-        set {
-            item = value;
+        set { item = value; } 
+    }
 
-            if(itemIcon)
-                itemIcon.gameObject.SetActive(item != EItem.NONE);
-        } 
+    public ItemInteractable Giver 
+    {
+        get { return giver; }
+        
+        set { giver = value; } 
+    }
+
+
+    public void SetItem(EItem _item, ItemInteractable _giver)
+    {
+        Item = _item;
+        Giver = _giver;
+
+        if (itemIcon)
+            itemIcon.gameObject.SetActive(item != EItem.NONE);
     }
 }
 

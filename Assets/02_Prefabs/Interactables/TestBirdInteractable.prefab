@@ -381,7 +381,8 @@ MonoBehaviour:
   itemToGive: 0
   acceptedItems: 01000000
   destroyTimer: 0
-  objectsToDestroy: []
+  objectsToDestroy:
+  - {fileID: 5795480357759158028}
 --- !u!1001 &942589039031650633
 PrefabInstance:
   m_ObjectHideFlags: 0

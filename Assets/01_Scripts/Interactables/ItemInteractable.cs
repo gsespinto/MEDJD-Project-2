@@ -5,17 +5,17 @@ using UnityEngine.EventSystems;
 
 public class ItemInteractable : Interactable
 {
-    ScoreScript scoreScript;
-    private ItemContainer containerScript;
 
     [Header("Interaction")]
     [SerializeField] private int objectiveIndex;
+    protected ItemContainer containerScript;
+    ScoreScript scoreScript;
 
     [Header("Giving")]
-    [SerializeField] private EItem itemToGive;
+    [SerializeField] protected EItem itemToGive;
 
     [Header("Receiving")]
-    [SerializeField] private List<EItem> acceptedItems = new List<EItem>();
+    [SerializeField] protected List<EItem> acceptedItems = new List<EItem>();
 
     [Header("Destroying")]
     [SerializeField] private float destroyTimer = 0; // Seconds after which to destroy the objects in the list
@@ -42,6 +42,7 @@ public class ItemInteractable : Interactable
     protected override void SetGazedAt(bool gazedAt)
     {
         // Null ref protection
+        // can't gaze
         if (!containerScript)
         {
             Debug.LogWarning("Missing container script reference.", this);
@@ -49,12 +50,23 @@ public class ItemInteractable : Interactable
             return;
         }
 
+        if (containerScript.Giver == this)
+        {
+            return;
+        }
+
+        // If the player has no item
+        // and there's no item to give
+        // can't gaze
         if (containerScript.Item == EItem.NONE && itemToGive == EItem.NONE)
         {
            base.SetGazedAt(false);
             return;
         }
         
+        // If the player has an item
+        // and this script doesn't accept it
+        // can't gaze
         if (containerScript.Item != EItem.NONE && !acceptedItems.Contains(containerScript.Item))
         {
            base.SetGazedAt(false);
@@ -73,12 +85,13 @@ public class ItemInteractable : Interactable
             return false;
         }
 
-        bool givingCondition = itemToGive == EItem.NONE || containerScript.Item == EItem.NONE || acceptedItems.Contains(containerScript.Item);
-        bool receivingCondition = acceptedItems.Count <= 0 || acceptedItems.Contains(containerScript.Item) || containerScript.Item == EItem.NONE;
+        bool canReceive = (acceptedItems.Contains(containerScript.Item) && containerScript.Giver != this);
+        bool canGive = containerScript.Item == EItem.NONE && itemToGive != EItem.NONE;
+        bool itemCondition = (itemToGive == EItem.NONE && acceptedItems.Count <= 0) || canGive || canReceive;
 
         // Has the interaction loaded?
         // Does the player have an item?
-        return currentInteractionLoadTime <= 0 && givingCondition && receivingCondition;
+        return currentInteractionLoadTime <= 0 && itemCondition;
     }
 
     public override void OnInteraction(BaseEventData eventData)
@@ -88,30 +101,12 @@ public class ItemInteractable : Interactable
 
         if (containerScript.Item != EItem.NONE)
         {
-            if (acceptedItems.Count <= 0)
-                return;
-
-            if (!scoreScript)
-            {
-                Debug.LogWarning("Missing score script reference.", this);
-                return;
-            }
-            
-            scoreScript.ChangeScore(+1);
-            containerScript.Item = EItem.NONE;
-
-            base.OnInteraction(eventData);
-            return;
+            ReceiveItem();
         }
-
-        if (itemToGive == EItem.NONE)
-            return;
-
-        // Add item to player
-        containerScript.Item = itemToGive;
+        else
+            GiveItem();
 
         base.OnInteraction(eventData);
-
         DestroyObjects();
     }
 
@@ -123,5 +118,39 @@ public class ItemInteractable : Interactable
 
         Destroy(objectsToDestroy[0], destroyTimer);
         objectsToDestroy.RemoveAt(0);
+    }
+
+    /// <summary> If there's an item to give, gives it to the item container </summary>
+    protected virtual bool GiveItem()
+    {
+        if (!containerScript)
+            return false;
+
+        if (itemToGive == EItem.NONE)
+            return false;
+
+        // Add item to player
+        containerScript.SetItem(itemToGive, this);
+        return true;
+    }
+
+    /// <summary> If the item container has an accepted item, take it </summary>
+    protected virtual bool ReceiveItem()
+    {
+        if (!containerScript)
+            return false;
+
+        if (acceptedItems.Count <= 0)
+            return false;
+
+        if (!scoreScript)
+        {
+            Debug.LogWarning("Missing score script reference.", this);
+            return false;
+        }
+
+        scoreScript.ChangeScore(+1);
+        containerScript.SetItem(EItem.NONE, null);
+        return true;
     }
 }
