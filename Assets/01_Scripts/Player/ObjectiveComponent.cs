@@ -17,9 +17,14 @@ public class ObjectiveComponent : MonoBehaviour
 
     void SetObjectivesVisuals()
     {
+        // Null ref protection
         if (!objectivesText)
+        {
+            Debug.LogWarning("Missing objectives text reference.", this);
             return;
+        }
 
+        // Reset objective text
         objectivesText.text = "";
 
         // Add each objective descript to a text mesh
@@ -32,42 +37,72 @@ public class ObjectiveComponent : MonoBehaviour
 
     public void CompleteObjective(int objectiveIndex)
     {
+        // If there aren't any objectives
+        // Or the level as finished
+        // Do nothing
         if (objectives.Length <= 0 || finishedLevel)
             return;
 
+        // Clamp given index
         objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
+        // Complete objective
         objectives[objectiveIndex].IsCompleted = true;
+        // Update visuals
         SetObjectivesVisuals();
 
+        if (HasCompletedAllObjectives())
+            FinishLevel();
+    }
+
+    /// <summary> Returns whether all objectives have been completed </summary>
+    bool HasCompletedAllObjectives()
+    {
         foreach (ObjectiveInfo obj in objectives)
         {
             if (!obj.IsCompleted)
-                return;
+                return false;
         }
+
+        return true;
+    }
+
+    /// <summary> Load new level </summary>
+    void FinishLevel()
+    {
 
         finishedLevel = true;
         GameObject.FindObjectOfType<SceneLoader>().LoadScene(nextScene);
     }
 
+    /// <summary> Updates given objective with given description and updates visuals </summary>
     public void UpdateObjectiveDescription(int objectiveIndex, string newDescription)
     {
+        // If there are no objectives
+        // Do nothing
         if (objectives.Length <= 0)
             return;
 
+        // Clamp given index
         objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
+        // Change objective description
         objectives[objectiveIndex].Description = newDescription;
 
+        // Update visuals
         SetObjectivesVisuals();
     }
 
+    /// <summary> Updates given objective with given additional information and updates visuals </summary>
     public void UpdateObjectiveAddedInformation(int objectiveIndex, string addedInformation)
     {
         if (objectives.Length <= 0)
             return;
 
+        // Clamp given index
         objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
+        // Change additional information
         objectives[objectiveIndex].AddedInformation = addedInformation;
 
+        // Update visuals
         SetObjectivesVisuals();
     }
 }
@@ -77,10 +112,11 @@ public class ObjectiveComponent : MonoBehaviour
 public class ObjectiveInfo
 {
     [SerializeField] private string description;
-    [SerializeField] private string addedInformation;
+    [SerializeField] private string additionalInformation;
     private bool isCompleted;
     [SerializeField] private Color color;
 
+    /// <summary> Is the objective completed </summary>
     public bool IsCompleted
     {
         get { return isCompleted; }
@@ -88,23 +124,32 @@ public class ObjectiveInfo
         set 
         {
             isCompleted = value;
-            description = "<s>" + description;
-            addedInformation = addedInformation + "</s>";
+
+            // If the objective has been completed
+            // Strike out the objective's description and additional information
+            if (isCompleted)
+            {
+                description = "<s>" + description;
+                additionalInformation = additionalInformation + "</s>";
+            }
         }
     }
 
+    /// <summary> Objective's description </summary>
     public string Description
     {
         get { return description; }
         set { description = value; }
     }
 
+    /// <summary> Additional information to the objective's description </summary>
     public string AddedInformation
     {
-        get { return addedInformation; }
-        set { addedInformation = value; }
+        get { return additionalInformation; }
+        set { additionalInformation = value; }
     }
 
+    /// <summary> Objective's text color </summary>
     public Color ObjectiveColor
     {
         get { return color; }

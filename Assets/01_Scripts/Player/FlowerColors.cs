@@ -6,6 +6,7 @@ public class FlowerColors : MonoBehaviour
 {
     [SerializeField] FPolenColor[] flowerColors;
 
+    /// <summary> Returns before color of given item type, if no found returns black </summary>
     public Color GetBeforeColor(EItem type)
     {
         foreach (FPolenColor pc in flowerColors)
@@ -19,6 +20,7 @@ public class FlowerColors : MonoBehaviour
         return Color.black;
     }
 
+    /// <summary> Returns after color of given item type, if no found returns black </summary>
     public Color GetAfterColor(EItem type)
     {
         foreach (FPolenColor pc in flowerColors)

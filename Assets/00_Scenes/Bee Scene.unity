@@ -208,6 +208,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: itemToGive
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: acceptedItems.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8816678920041475808, guid: 019e33b06fcdc8d4b9bd794279260fbd,
         type: 3}
       propertyPath: polenType
@@ -1809,6 +1819,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: itemToGive
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: acceptedItems.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8816678920041475808, guid: 019e33b06fcdc8d4b9bd794279260fbd,
         type: 3}
       propertyPath: polenType
@@ -2562,6 +2582,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: acceptedItems.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: itemToGive
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019e33b06fcdc8d4b9bd794279260fbd, type: 3}
 --- !u!4 &1538052281 stripped
@@ -2647,6 +2677,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785595611417239431, guid: 48c5179d622bd0c46a4aefb8490984ca,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785595611417239431, guid: 48c5179d622bd0c46a4aefb8490984ca,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165076232547501571, guid: 48c5179d622bd0c46a4aefb8490984ca,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c5179d622bd0c46a4aefb8490984ca, type: 3}
@@ -3056,6 +3101,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: itemToGive
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: acceptedItems.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8816678920041475808, guid: 019e33b06fcdc8d4b9bd794279260fbd,
         type: 3}
       propertyPath: polenType
@@ -3150,6 +3205,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: itemToGive
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930981545930518535, guid: 019e33b06fcdc8d4b9bd794279260fbd,
+        type: 3}
+      propertyPath: acceptedItems.Array.data[0]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8816678920041475808, guid: 019e33b06fcdc8d4b9bd794279260fbd,
         type: 3}

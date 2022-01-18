@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 6199511238997552157}
   - component: {fileID: 5947544425796150862}
   - component: {fileID: 356049387132561688}
-  - component: {fileID: 167414443537854459}
+  - component: {fileID: 8633021934862396581}
   - component: {fileID: 6866706208611703383}
   - component: {fileID: 2649991135431188836}
   - component: {fileID: 3222972409379775056}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveIndex: 1
   targetScore: 5
---- !u!114 &167414443537854459
+--- !u!114 &8633021934862396581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2628702931189246823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac27d4196a8ba540ab49db22faa0f75, type: 3}
+  m_Script: {fileID: 11500000, guid: c0f6dd207bc99ac4e89ce444d0b86dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 6839480631976270473}
@@ -270,11 +270,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowerColors:
   - flower: 2
-    beforeColor: {r: 0.9056604, g: 0.5767177, b: 0.5767177, a: 0}
-    afterColor: {r: 1, g: 0, b: 0, a: 0}
+    beforeColor: {r: 0.9056604, g: 0.5767177, b: 0.5767177, a: 0.5882353}
+    afterColor: {r: 1, g: 0, b: 0, a: 0.5882353}
   - flower: 3
-    beforeColor: {r: 0.4452207, g: 0.8207547, b: 0.8130015, a: 0}
-    afterColor: {r: 0, g: 1, b: 0.9680033, a: 0}
+    beforeColor: {r: 0.6069776, g: 0.8301887, b: 0.8254895, a: 0.5882353}
+    afterColor: {r: 0, g: 0.63959944, b: 0.8962264, a: 0.5882353}
 --- !u!82 &2649991135431188836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1276,11 +1276,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678589436426612700, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.8149996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678589436426612700, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
-        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -1331,16 +1326,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678589436426612700, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 799.99994
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678589436426612700, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 857.8616
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678589436426612700, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
-        type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
@@ -1373,6 +1358,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158543186915123193, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158543186915123193, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158543186915123193, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c9d71b33bc72bb479abce2d3e47d93b, type: 3}

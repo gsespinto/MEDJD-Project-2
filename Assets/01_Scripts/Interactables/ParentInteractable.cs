@@ -7,6 +7,29 @@ public class ParentInteractable : NarrationInteractable
     [SerializeField] private string newDescription = "Finish listening to parent."; // New description of the objective
     private bool hasQueuedClips; // Have the narration clips been queued
 
+    protected override void SetGazedAt(bool gazedAt)
+    {
+        // If it has already queued the clips
+        // Can't be gazed at
+        if (hasQueuedClips)
+        {
+            base.SetGazedAt(false);
+            return;
+        }
+
+        base.SetGazedAt(gazedAt);
+    }
+
+    public override bool CanInteract()
+    {
+        // If it has already queued the clips
+        // Can't interact
+        if (hasQueuedClips)
+            return false;
+
+        return base.CanInteract();
+    }
+
     public override void OnInteraction(BaseEventData eventData)
     {
         if (!CanInteract())
@@ -18,7 +41,7 @@ public class ParentInteractable : NarrationInteractable
         GameObject.FindObjectOfType<ObjectiveComponent>().UpdateObjectiveDescription(objectiveIndex, newDescription);
         // Has queued clips
         hasQueuedClips = true;
-    }
+}
 
     /// <summary> If the narration component has finished playing the conversation clips, complete the objective </summary>
     void CompleteObjective()

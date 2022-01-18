@@ -14,28 +14,40 @@ public class ItemContainer : MonoBehaviour
         SetItem(EItem.NONE, null);
     }
 
+    /// <summary> Item that is being held </summary>
     public EItem Item 
     {
         get { return item; }
-        
-        set { item = value; } 
     }
 
+    /// <summary> Script that has given the item </summary>
     public ItemInteractable Giver 
     {
         get { return giver; }
-        
-        set { giver = value; } 
     }
 
-
-    public void SetItem(EItem _item, ItemInteractable _giver)
+    /// <summary> Sets the item being held and the script that gave it </summary>
+    /// <param name="_item"> Item to be held </param>
+    /// <param name="_giver"> Reference to script that is giving the item </param>
+    public virtual void SetItem(EItem _item, ItemInteractable _giver)
     {
-        Item = _item;
-        Giver = _giver;
+        // Update values to correspond to given
+        item = _item;
+        giver = _giver;
 
-        if (itemIcon)
-            itemIcon.gameObject.SetActive(item != EItem.NONE);
+        UpdateItemIconVisibility();
+    }
+
+    /// <summary> Hides item icon if there's no item being held, else shows it </summary>
+    void UpdateItemIconVisibility()
+    {
+        // Null ref protection
+        if (!itemIcon)
+        {
+            return;
+        }
+
+        itemIcon.gameObject.SetActive(item != EItem.NONE);
     }
 }
 

@@ -295,7 +295,7 @@ MonoBehaviour:
   rechargeInteraction: 0
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
-  interactionVfxPrefab: {fileID: 8922192642532342204, guid: 49ab966992a3a9f488a73e3aafcd33fa,
+  interactionVfxPrefab: {fileID: 8922192642532342204, guid: 46ef0d25aa0dba5459454d33d992dfb4,
     type: 3}
   vfxTarget: {fileID: 2786188456171451349}
   destroyTimer: 3

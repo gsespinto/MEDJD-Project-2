@@ -50,7 +50,7 @@ public class PlanetMovement : MonoBehaviour
 
     void Update()
     {
-        WindSFX();
+        FlightSFX();
         Accelerate();
     }
 
@@ -93,7 +93,8 @@ public class PlanetMovement : MonoBehaviour
         environment.Rotate(-transform.right, environmentCurrentSpeed, Space.World);
     }
 
-    void WindSFX()
+    /// <summary> Handles flight sfx sources pan and volume values according to turn movement </summary>
+    void FlightSFX()
     {
         // Null ref protection
         if (flyingSources.Length <= 0)
@@ -104,6 +105,7 @@ public class PlanetMovement : MonoBehaviour
         // Set pan value according to volume and turn angle
         float pan = Mathf.Clamp(volume * Mathf.Sign(turnAngle), -maxWindSide, maxWindSide);
 
+        // Set pan and volume values of each flight sfx 
         foreach(AudioSource source in flyingSources)
         {
             source.volume = volume;

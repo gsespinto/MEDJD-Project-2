@@ -8,9 +8,11 @@ public class ScoreScript : MonoBehaviour
     public int objectiveIndex;
     [SerializeField] int targetScore = 5;
     int currentScore = 0;
+    ObjectiveComponent objectiveComponent;
 
     void Start()
     {
+        objectiveComponent = this.GetComponent<ObjectiveComponent>();
         // Sets initial visual values
         ChangeScore(0);
     }
@@ -18,16 +20,18 @@ public class ScoreScript : MonoBehaviour
     /// <summary> Change score by given amount, if it has reached target score, load next scene </summary>
     public void ChangeScore(int amount)
     {
-        ObjectiveComponent objectiveComponent = GameObject.FindObjectOfType<ObjectiveComponent>();
-
+        // Null ref protection
         if (!objectiveComponent)
+        {
+            Debug.LogWarning("Missing objectives component reference.", this);
             return;
+        }
 
         // Change score by given amount
         currentScore += amount;
         // Update visuals
         string info = "[" + currentScore + " / " + targetScore + "]";
-        GameObject.FindObjectOfType<ObjectiveComponent>().UpdateObjectiveAddedInformation(objectiveIndex, info);
+        objectiveComponent.UpdateObjectiveAddedInformation(objectiveIndex, info);
 
         // If score has reached its target value
         // Complete objective

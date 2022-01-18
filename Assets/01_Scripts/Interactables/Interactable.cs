@@ -37,9 +37,10 @@ public class Interactable : MonoBehaviour
 
     protected virtual void Start()
     {
+        audioSource = this.GetComponent<AudioSource>();
+
         SetGazedAt(false);
         currentInteractionLoadTime = interactionLoadTime;
-        audioSource = this.GetComponent<AudioSource>();
     }
 
     protected virtual void Update()
@@ -55,6 +56,8 @@ public class Interactable : MonoBehaviour
 
         // Enables and disables interaction visuals
         if (loadCanvas) loadCanvas.gameObject.SetActive(gazedAt);
+        // Plays enter SFX when gazed at
+        if (gazedAt) PlaySFX(onEnterSFXs);
     }
 
     /// <summary> Called when the player interacts with this object </summary>
@@ -147,7 +150,6 @@ public class Interactable : MonoBehaviour
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerEnter;
         entry.callback.AddListener((data) => { SetGazedAt(true); });
-        entry.callback.AddListener((data) => { PlaySFX(onEnterSFXs); });
         eventTrigger.triggers.Add(entry);
 
 

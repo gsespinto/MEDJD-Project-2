@@ -73,7 +73,7 @@ MonoBehaviour:
   rechargeInteraction: 1
   loadImage: {fileID: 8792240392966017800}
   loadCanvas: {fileID: 4096697454436545572}
-  interactionVfxPrefab: {fileID: 8922192642532342204, guid: 3b98b03c9facc4a498112266c9076805,
+  interactionVfxPrefab: {fileID: 8922192642532342204, guid: 5ae78de9a2b602e4e81567a8c5aa1c07,
     type: 3}
   vfxTarget: {fileID: 6021973781661857216}
   objectiveIndex: 1

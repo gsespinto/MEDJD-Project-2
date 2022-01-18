@@ -115,6 +115,7 @@ public class NarrationComponent : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
+    /// <summary> Returns whether there's no clip to be played or being played </summary>
     public bool HasFinishedPlaying()
     {
         return clipsQueue.Count <= 0 && !currentNarrationSource;

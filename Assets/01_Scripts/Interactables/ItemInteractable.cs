@@ -23,10 +23,11 @@ public class ItemInteractable : Interactable
 
     protected override void Start()
     {
+        // Get ContainerScript ref
         containerScript = GameObject.FindObjectOfType<ItemContainer>();
 
+        // Get correspondent ScoreScript ref from scene
         ScoreScript[] scoreScripts = GameObject.FindObjectsOfType<ScoreScript>();
-
         foreach (ScoreScript sc in scoreScripts)
         {
             if (sc.objectiveIndex == objectiveIndex)
@@ -50,17 +51,20 @@ public class ItemInteractable : Interactable
             return;
         }
 
+        // If this is the current giving script
+        // Can't be gazed
         if (containerScript.Giver == this)
         {
+            base.SetGazedAt(false);
             return;
         }
 
         // If the player has no item
         // and there's no item to give
-        // can't gaze
+        // Can't be gaze
         if (containerScript.Item == EItem.NONE && itemToGive == EItem.NONE)
         {
-           base.SetGazedAt(false);
+            base.SetGazedAt(false);
             return;
         }
         
@@ -85,9 +89,15 @@ public class ItemInteractable : Interactable
             return false;
         }
 
+        // Can receive item if the script accepts the item the player contains
+        // If this isn't the item interactable that gave the item
         bool canReceive = (acceptedItems.Contains(containerScript.Item) && containerScript.Giver != this);
+
+        // Can give item if the player doens't hold any item
+        // If this script has an item to give
         bool canGive = containerScript.Item == EItem.NONE && itemToGive != EItem.NONE;
-        bool itemCondition = (itemToGive == EItem.NONE && acceptedItems.Count <= 0) || canGive || canReceive;
+
+        bool itemCondition = canGive || canReceive;
 
         // Has the interaction loaded?
         // Does the player have an item?
@@ -99,14 +109,21 @@ public class ItemInteractable : Interactable
         if (!CanInteract())
             return;
 
+        // If the player holds an item
+        // Then try to receive it
         if (containerScript.Item != EItem.NONE)
         {
             ReceiveItem();
         }
+        // If the player has no item
+        // Then try to give it
         else
             GiveItem();
 
         base.OnInteraction(eventData);
+
+        // If there's objects to destroy
+        // Destroy them after first interaction
         DestroyObjects();
     }
 
@@ -121,36 +138,55 @@ public class ItemInteractable : Interactable
     }
 
     /// <summary> If there's an item to give, gives it to the item container </summary>
+    /// <returns> If it has successfully given the item </returns>
     protected virtual bool GiveItem()
     {
+        // Null ref protection
         if (!containerScript)
+        {
+            Debug.LogWarning("Missing container script reference.", this);
             return false;
+        }
 
+        // If it hasn't any item to give
+        // Do nothing
         if (itemToGive == EItem.NONE)
             return false;
 
         // Add item to player
         containerScript.SetItem(itemToGive, this);
+
         return true;
     }
 
     /// <summary> If the item container has an accepted item, take it </summary>
+    /// <returns> If it has successfully received an item </returns>
     protected virtual bool ReceiveItem()
     {
+        // Null ref protection
         if (!containerScript)
+        {
+            Debug.LogWarning("Missing container script reference.", this);
             return false;
+        }
 
-        if (acceptedItems.Count <= 0)
-            return false;
-
+        // Null ref protection
         if (!scoreScript)
         {
             Debug.LogWarning("Missing score script reference.", this);
             return false;
         }
 
+        // If this script doesn't accept any items
+        // Do nothing
+        if (acceptedItems.Count <= 0)
+            return false;
+
+        // Increase score
+        // Reset containter script item value
         scoreScript.ChangeScore(+1);
         containerScript.SetItem(EItem.NONE, null);
+
         return true;
     }
 }
