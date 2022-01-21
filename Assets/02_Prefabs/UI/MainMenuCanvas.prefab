@@ -132,12 +132,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
-  onEnterSFX: {fileID: 0}
-  onInteractionSFX: {fileID: 0}
+  onEnterSFXs: []
+  onInteractionSFXs: []
   setupEventTriggers: 0
   interactionLoadTime: 0
+  rechargeInteraction: 0
   loadImage: {fileID: 0}
   loadCanvas: {fileID: 0}
+  interactionVfxPrefab: {fileID: 0}
+  vfxTarget: {fileID: 0}
 --- !u!1 &607458058281684483
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,8 +536,8 @@ GameObject:
   - component: {fileID: 1678589436426612700}
   - component: {fileID: 812631913541065459}
   - component: {fileID: 5228892073738165350}
-  - component: {fileID: 7755350700909316894}
   - component: {fileID: 5317760169802592831}
+  - component: {fileID: 6848325107230047664}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -610,23 +613,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &7755350700909316894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3235516168306478385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &5317760169802592831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,6 +636,23 @@ MonoBehaviour:
   musicSlider: {fileID: 6335310102336289507}
   narrationSlider: {fileID: 6200047721773542150}
   ambientSlider: {fileID: 370242680989378081}
+--- !u!114 &6848325107230047664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3235516168306478385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ignoreReversedGraphics: 1
+  blockingObjects: 2
+  blockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &4487085756512786949
 GameObject:
   m_ObjectHideFlags: 0

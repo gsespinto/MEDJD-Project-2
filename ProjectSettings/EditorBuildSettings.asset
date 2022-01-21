@@ -13,8 +13,14 @@ EditorBuildSettings:
     guid: 54f0d3cc434e65b4da93f0374d5d923b
   - enabled: 1
     path: Assets/00_Scenes/Bird Scene.unity
-    guid: 075cd3a90a451f541a76a45af21fe3fa
+    guid: 112a45658ee91f24c9d69a232e59b1fe
   - enabled: 1
     path: Assets/00_Scenes/Bee Scene.unity
     guid: d3ed4f5a65539404d8dd3fc2cab2d9d8
+  - enabled: 1
+    path: Assets/00_Scenes/Good Ending.unity
+    guid: 9a8363e6ca76c194bb5e18a0f5f96421
+  - enabled: 1
+    path: Assets/00_Scenes/Bad Ending.unity
+    guid: e191575da44d57c49ad3241bb16f7b68
   m_configObjects: {}
