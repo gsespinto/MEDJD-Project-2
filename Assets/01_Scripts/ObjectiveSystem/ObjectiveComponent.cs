@@ -14,7 +14,7 @@ public class ObjectiveComponent : MonoBehaviour
     void Start()
     {
         foreach (ObjectiveInfo oi in objectives)
-            oi.ResetReminder();
+            oi.StartFunction();
     }
 
     private void Update()

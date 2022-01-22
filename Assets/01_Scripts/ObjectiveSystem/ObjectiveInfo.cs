@@ -2,7 +2,7 @@
 using TMPro;
 
 [System.Serializable]
-public class ObjectiveInfo : MonoBehaviour
+public class ObjectiveInfo
 {
     [SerializeField] private TextMeshProUGUI informationText;
     [SerializeField] private string additionalInformation;
@@ -15,10 +15,12 @@ public class ObjectiveInfo : MonoBehaviour
 
     NarrationComponent narrationComponent;
 
-    void Start()
+    /// <summary> Called in Start function of ObjectiveComponent </summary>
+    public void StartFunction()
     {
         // Get narration component
         narrationComponent = GameObject.FindObjectOfType<NarrationComponent>();
+        ResetReminder();
     }
 
     /// <summary> Is the objective completed </summary>
@@ -83,14 +85,17 @@ public class ObjectiveInfo : MonoBehaviour
         // Null ref protection
         if (!narrationComponent)
         {
-            Debug.LogWarning("Missing narrative component reference.", this);
+            Debug.LogWarning("Missing narrative component reference in ObjectiveInfo.");
             return;
         }
 
         // Play reminder narration
         narrationComponent.PlayNarration(reminder);
+
+        ResetReminder();
     }
 
+    /// <summary> Reset currentReminderTimer to original value </summary>
     public void ResetReminder()
     {
         currentReminderTimer = Random.Range(reminderTimerRange.x, reminderTimerRange.y);

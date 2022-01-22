@@ -2760,7 +2760,7 @@ PrefabInstance:
     - target: {fileID: 4142539497020235043, guid: 48c5179d622bd0c46a4aefb8490984ca,
         type: 3}
       propertyPath: fireTimer
-      value: 60
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4302281229397949414, guid: 48c5179d622bd0c46a4aefb8490984ca,
         type: 3}

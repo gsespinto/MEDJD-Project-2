@@ -3,7 +3,22 @@ guid: 03eef7395defd4e468c15588432e5753
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pelalas
+    second: {fileID: 2100000, guid: a6712cc322aac784c9e374d613e96317, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polen
+    second: {fileID: 2100000, guid: e7c44e49f0ccee6499d11b993bdc2c0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco
+    second: {fileID: 2100000, guid: efc0869b0a0dc1649a99cc0e645d24f3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
