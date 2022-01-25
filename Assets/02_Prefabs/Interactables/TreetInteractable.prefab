@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2376287336678407454}
   - component: {fileID: 5340770475569774753}
   - component: {fileID: 6592110492901373966}
-  - component: {fileID: 6767025662937967407}
+  - component: {fileID: 4670680595498650602}
   m_Layer: 0
   m_Name: TreetInteractable
   m_TagString: Untagged
@@ -273,7 +273,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6767025662937967407
+--- !u!114 &4670680595498650602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8144443259667496596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e3db8d1cf7fba439ecc5ebd5c48dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b709482d061797478fc7a950cf77b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6592110492901373966}
@@ -291,19 +291,20 @@ MonoBehaviour:
   onInteractionSFXs:
   - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
-  interactionLoadTime: 3
+  interactionLoadTime: 2
   rechargeInteraction: 0
   loadImage: {fileID: 8230814856750092273}
   loadCanvas: {fileID: 3523941553437649117}
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: 46ef0d25aa0dba5459454d33d992dfb4,
     type: 3}
   vfxTarget: {fileID: 2786188456171451349}
+  objectiveIndex: 0
+  itemToGive: 1
+  acceptedItems: 
   destroyTimer: 3
-  objsToDestroy:
-  - {fileID: 2784160854552915015}
-  shoutClips:
-  - {fileID: 8300000, guid: 42d7acd293e962d44b49b461af612915, type: 3}
-  - {fileID: 8300000, guid: 6d6d48ba109fcf848881910ca5c43075, type: 3}
+  objectsToDestroy:
+  - {fileID: 4670680595498650602}
+  - {fileID: 9187404305007664010}
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,12 +524,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426b44a7575f71e479fab4f4e8431989, type: 3}
---- !u!1 &2784160854552915015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989,
-    type: 3}
-  m_PrefabInstance: {fileID: 2784680625423294483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2786188456171451349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989,
@@ -948,3 +943,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426b44a7575f71e479fab4f4e8431989, type: 3}
+--- !u!1 &9187404305007664010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989,
+    type: 3}
+  m_PrefabInstance: {fileID: 9189111548630030302}
+  m_PrefabAsset: {fileID: 0}

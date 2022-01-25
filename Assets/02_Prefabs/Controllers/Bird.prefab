@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 2649991135431188836}
   - component: {fileID: 3222972409379775056}
   - component: {fileID: 6005650828504479021}
+  - component: {fileID: 7774939344627537839}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -433,8 +434,7 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: "Estes parecem esfomeados. Ainda deve de haver alguma fruta nestas
-        \xE1rvores."
+      caption: Deliver fruit from the trees to the nests.
       sourceIndex: 0
       owner: 
       ownerColor: {r: 0, g: 0, b: 0, a: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: Gostava que visses as zonas descampadas.
+      caption: There are so many unflorested areas. Get closer to one.
       sourceIndex: 0
       owner: 
       ownerColor: {r: 0, g: 0, b: 0, a: 0}
@@ -451,6 +451,19 @@ MonoBehaviour:
   nextScene: 3
   objectiveRefreshTime: 1
   objectiveIndicators: []
+--- !u!114 &7774939344627537839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628702931189246823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac27d4196a8ba540ab49db22faa0f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 6839480631976270473}
 --- !u!1 &3621864116772195327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1139,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.0036342584
       objectReference: {fileID: 0}
+    - target: {fileID: 1770067631237924283, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7866c64e7c89b3f4b9f13ce05697acd4,
+        type: 3}
     - target: {fileID: 2407188327598200910, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -1139,7 +1158,7 @@ PrefabInstance:
     - target: {fileID: 7258308625630319697, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
@@ -1168,6 +1187,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6839480631976270473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1770067631237924283, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5078437793261592370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &5850651415015911662 stripped

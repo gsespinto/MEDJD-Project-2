@@ -74811,7 +74811,7 @@ MonoBehaviour:
   vfxTarget: {fileID: 0}
   narrations:
   - clip: {fileID: 8300000, guid: f76c77598d62df646a3f09cfde9e2f9b, type: 3}
-    caption: "O que fizemos e deixamos de fazer, n\xE3o tem mais volta."
+    caption: With what we did and didn't do, there's no going back.
     sourceIndex: 0
     owner: 
     ownerColor: {r: 0, g: 0, b: 0, a: 0}
