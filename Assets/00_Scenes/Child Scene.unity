@@ -728,6 +728,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Child
       objectReference: {fileID: 0}
+    - target: {fileID: 2649991135431188836, guid: e3c948bf8fcf2b2409df06cb965f688b,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3320240632491365947, guid: e3c948bf8fcf2b2409df06cb965f688b,
         type: 3}
       propertyPath: objectives.Array.data[2].description
@@ -796,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 4480097505079773403, guid: e3c948bf8fcf2b2409df06cb965f688b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.56
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 4480097505079773403, guid: e3c948bf8fcf2b2409df06cb965f688b,
         type: 3}
@@ -1191,7 +1196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1022257854
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2232,6 +2237,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 31.845001
       objectReference: {fileID: 0}
+    - target: {fileID: 1433831510595420036, guid: f7b1d0262595817468025a3b7e84b458,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433831510595420036, guid: f7b1d0262595817468025a3b7e84b458,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433831510595420036, guid: f7b1d0262595817468025a3b7e84b458,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1435568568673837078, guid: f7b1d0262595817468025a3b7e84b458,
         type: 3}
       propertyPath: m_Name
@@ -2305,6 +2325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179650757879008714, guid: 4fb8a5491ef2cb54d9d3b657d4040534,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fb8a5491ef2cb54d9d3b657d4040534, type: 3}

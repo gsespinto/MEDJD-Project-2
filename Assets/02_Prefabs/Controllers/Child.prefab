@@ -96,7 +96,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
       caption: What did you want to tell me, love?
       sourceIndex: 1
       owner: Mom
-      ownerColor: {r: 0, g: 1, b: 0.7830725, a: 0}
+      ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
     reminderTimerRange: {x: 20, y: 30}
   - informationText: {fileID: 5447653436541937075}
     additionalInformation: 
@@ -209,7 +209,7 @@ MonoBehaviour:
       caption: Use some fruits to feed the birds around us.
       sourceIndex: 1
       owner: Mom
-      ownerColor: {r: 0, g: 1, b: 0.7830725, a: 0}
+      ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
     reminderTimerRange: {x: 10, y: 15}
   nextScene: 2
   objectiveRefreshTime: 1

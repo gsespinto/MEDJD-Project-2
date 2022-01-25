@@ -78,7 +78,9 @@ MonoBehaviour:
   loadCanvas: {fileID: 0}
   interactionVfxPrefab: {fileID: 0}
   vfxTarget: {fileID: 0}
+  objectiveIndex: 0
   itemToGive: 1
+  acceptedItems: 
   destroyTimer: 0
   objectsToDestroy:
   - {fileID: 6223586467775556276}
@@ -87,6 +89,7 @@ MonoBehaviour:
   - {fileID: 1207110841493938910}
   - {fileID: 5376077522426014243}
   - {fileID: 8091713869691167301}
+  destroyOneByOne: 1
 --- !u!114 &2567897737237046629
 MonoBehaviour:
   m_ObjectHideFlags: 0

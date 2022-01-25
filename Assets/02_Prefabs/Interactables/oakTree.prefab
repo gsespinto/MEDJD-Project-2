@@ -113,7 +113,7 @@ MonoBehaviour:
   objectiveIndex: 0
   itemToGive: 1
   acceptedItems: 
-  destroyTimer: 3
+  destroyTimer: 2
   objectsToDestroy:
   - {fileID: 5191063073584241396}
   - {fileID: 1549962098258803620}

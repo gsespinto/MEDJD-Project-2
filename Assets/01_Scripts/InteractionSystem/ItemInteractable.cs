@@ -20,6 +20,7 @@ public class ItemInteractable : Interactable
     [Header("Destroying")]
     [SerializeField] private float destroyTimer = 0; // Seconds after which to destroy the objects in the list
     [SerializeField] private List<Object> objectsToDestroy = new List<Object>(); // List of objects to destroy upon interaction
+    [SerializeField] private bool destroyOneByOne = false; // Should destroy objects one by one
 
     protected override void Start()
     {
@@ -127,14 +128,21 @@ public class ItemInteractable : Interactable
         DestroyObjects();
     }
 
-    /// <summary> Destroy each object of list to destroy after set time </summary>
+    /// <summary> Destroy object of list to destroy after set time </summary>
     protected virtual void DestroyObjects()
     {
         if (objectsToDestroy.Count <= 0)
             return;
 
-        Destroy(objectsToDestroy[0], destroyTimer);
-        objectsToDestroy.RemoveAt(0);
+        if (destroyOneByOne)
+        {
+            Destroy(objectsToDestroy[0], destroyTimer);
+            objectsToDestroy.RemoveAt(0);
+            return;
+        }
+
+        foreach (Object obj in objectsToDestroy)
+            Destroy(obj, destroyTimer);
     }
 
     /// <summary> If there's an item to give, gives it to the item container </summary>
