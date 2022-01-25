@@ -434,7 +434,8 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: Deliver fruit from the trees to the nests.
+      caption: This band leader should scouts for fruit from the trees and delivers
+        it to nests.
       sourceIndex: 0
       owner: 
       ownerColor: {r: 0, g: 0, b: 0, a: 0}

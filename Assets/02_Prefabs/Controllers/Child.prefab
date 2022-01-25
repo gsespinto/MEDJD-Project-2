@@ -197,7 +197,7 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: What did you want to tell me, love?
+      caption: What did you want to tell me, honey?
       sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: Use some fruits to feed the birds around us.
+      caption: Use some of the fruits from the basket to feed the birds around us.
       sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
