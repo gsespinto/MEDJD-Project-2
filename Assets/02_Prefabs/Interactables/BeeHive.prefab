@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1954703830170543756}
   - component: {fileID: 1733463576408490538}
   - component: {fileID: 9180741878622114773}
+  - component: {fileID: 8838469156592692243}
   m_Layer: 0
   m_Name: BeeHive
   m_TagString: Untagged
@@ -123,6 +124,7 @@ MonoBehaviour:
   acceptedItems: 0200000003000000
   destroyTimer: 0
   objectsToDestroy: []
+  destroyOneByOne: 0
 --- !u!65 &9180741878622114773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -136,6 +138,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0532092, y: 1.125648, z: 0.9547781}
   m_Center: {x: 0.03947262, y: 0.557436, z: 0.011028525}
+--- !u!114 &8838469156592692243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127877403017264498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1a06d61074d7842881f655d312a38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  onEnterSFXs: []
+  onInteractionSFXs: []
+  setupEventTriggers: 1
+  interactionLoadTime: 1
+  rechargeInteraction: 0
+  loadImage: {fileID: 0}
+  loadCanvas: {fileID: 0}
+  interactionVfxPrefab: {fileID: 0}
+  vfxTarget: {fileID: 0}
+  narrations:
+  - clip: {fileID: 8300000, guid: 4a9369b69bfd71a439e8e653d971de1b, type: 3}
+    caption: As I said before,
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: bc0d22cce33d2034da83347c0c0d9bc5, type: 3}
+    caption: not just the birds lose their houses,
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: ab4627f21475bbb42b10fe845301e04b, type: 3}
+    caption: but other animals and also insects.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 2300e5580bb666b4d9b5445e267ae5a3, type: 3}
+    caption: The bees, for example, can lose their hives.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 767f36a39ae2e834d8ff533167f6f943, type: 3}
+    caption: It may not seem like it, but the bees would make a big difference if
+      they were extinct.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 73d71ea163e1ab840b3b0599d5d8a1c0, type: 3}
+    caption: Without them we wouldn't have food, therefore, we also wouldn't exist.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
 --- !u!1001 &8568345609490083351
 PrefabInstance:
   m_ObjectHideFlags: 0

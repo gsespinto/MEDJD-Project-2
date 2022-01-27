@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2930981545930518535}
   - component: {fileID: 2567897737237046629}
   - component: {fileID: 1235315055172595931}
-  - component: {fileID: 3903225591309828625}
   m_Layer: 0
   m_Name: Cravo
   m_TagString: Untagged
@@ -85,6 +84,7 @@ MonoBehaviour:
   acceptedItems: 02000000
   destroyTimer: 0
   objectsToDestroy: []
+  destroyOneByOne: 0
   polenVFX: {fileID: 202262895193671488}
   materialToChangeIndex: 1
   flowerMesh: {fileID: 8923285939804764752}
@@ -200,34 +200,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3903225591309828625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435568568673837078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1a06d61074d7842881f655d312a38b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  onEnterSFXs: []
-  onInteractionSFXs: []
-  setupEventTriggers: 1
-  interactionLoadTime: 1
-  rechargeInteraction: 0
-  loadImage: {fileID: 0}
-  loadCanvas: {fileID: 0}
-  interactionVfxPrefab: {fileID: 0}
-  vfxTarget: {fileID: 0}
-  narrations:
-  - clip: {fileID: 8300000, guid: b7fabc1dae3f5b54086823e4be88e4d2, type: 3}
-    caption: "Isto \xE9 um teste."
-    sourceIndex: 0
-    owner: 
-    ownerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7926391184469479523
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_Polen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557062888031537510, guid: 067b32a1798209742a9257e507ab0895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 067b32a1798209742a9257e507ab0895, type: 3}

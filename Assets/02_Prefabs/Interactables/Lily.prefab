@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8624108068075781289}
   - component: {fileID: 2930981545930518535}
   - component: {fileID: 2567897737237046629}
-  - component: {fileID: 1235315055172595931}
   - component: {fileID: 3903225591309828625}
   m_Layer: 0
   m_Name: Lily
@@ -68,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73506c00ba35500409fa0e8d128f2219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1235315055172595931}
+  audioSource: {fileID: 0}
   onEnterSFXs:
   - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
   onInteractionSFXs:
@@ -86,6 +85,7 @@ MonoBehaviour:
   acceptedItems: 03000000
   destroyTimer: 0
   objectsToDestroy: []
+  destroyOneByOne: 0
   polenVFX: {fileID: 202262895193671488}
   materialToChangeIndex: 1
   flowerMesh: {fileID: 1477084644016531194}
@@ -104,103 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!82 &1235315055172595931
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435568568673837078}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -4644335899251471496, guid: c15d2e458c5478d4c90861d68d8eb9b4,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &3903225591309828625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,11 +127,37 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 0}
   vfxTarget: {fileID: 0}
   narrations:
-  - clip: {fileID: 8300000, guid: b7fabc1dae3f5b54086823e4be88e4d2, type: 3}
-    caption: "Isto \xE9 um teste."
+  - clip: {fileID: 8300000, guid: 4a9369b69bfd71a439e8e653d971de1b, type: 3}
+    caption: As I said before,
     sourceIndex: 0
-    owner: 
-    ownerColor: {r: 0, g: 0, b: 0, a: 0}
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: bc0d22cce33d2034da83347c0c0d9bc5, type: 3}
+    caption: not just the birds lose their houses,
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: ab4627f21475bbb42b10fe845301e04b, type: 3}
+    caption: but other animals and also insects.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 2300e5580bb666b4d9b5445e267ae5a3, type: 3}
+    caption: The bees, for example, can lose their hives.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 767f36a39ae2e834d8ff533167f6f943, type: 3}
+    caption: It may not seem like it, but the bees would make a big difference if
+      they were extinct.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 73d71ea163e1ab840b3b0599d5d8a1c0, type: 3}
+    caption: Without them we wouldn't have food, therefore, we also wouldn't exist.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
 --- !u!1 &7339860340222659237
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VFX_Polen
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557062888031537510, guid: 067b32a1798209742a9257e507ab0895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 067b32a1798209742a9257e507ab0895, type: 3}

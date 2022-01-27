@@ -86,11 +86,43 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 0}
   vfxTarget: {fileID: 0}
   narrations:
-  - clip: {fileID: 8300000, guid: bc7c38aa1c428524eb2236f59316a7a2, type: 3}
-    caption: "Isto \xE9 um teste."
+  - clip: {fileID: 8300000, guid: 461093610bf1d8b4ebfee48d5822727e, type: 3}
+    caption: What happened is, a lot of trees are being cut down,
     sourceIndex: 0
-    owner: 
-    ownerColor: {r: 0.7075472, g: 0.4038359, b: 0.6412585, a: 0}
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 089b667e3cb9e69408e5c1eefe60a42f, type: 3}
+    caption: so they don't have anywhere to live anymore.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 321e9916775f9c4449bf9c8c73deb64c, type: 3}
+    caption: Unfortunately deforestation is causing this, and it is affecting not
+      just the birds.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 3ee14043871d1db40bad27939c5c4b11, type: 3}
+    caption: A lot of animals are losing space too, and some of them may cease to
+      exist.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: c7c66462fb2d16c459dbb654aaf663a6, type: 3}
+    caption: Great part of the pollution in the cities are caused because of the deforestation.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: ad52bd2d5890930408ad9e8f5cead884, type: 3}
+    caption: We have fewer trees to clean the air.
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 93baca66aea85984880a7a252c49da68, type: 3}
+    caption: And a lot of fires happen too...
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
   objectiveIndex: 1
   newDescription: Finish listening.
 --- !u!82 &3948199667079975887
