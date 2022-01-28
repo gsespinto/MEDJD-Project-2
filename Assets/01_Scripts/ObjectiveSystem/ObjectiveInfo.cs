@@ -89,6 +89,10 @@ public class ObjectiveInfo
             return;
         }
 
+        // Wait for the narrative component to have finished playing
+        if (!narrationComponent.HasFinishedPlaying())
+            return;
+
         // Play reminder narration
         narrationComponent.PlayNarration(reminder);
 

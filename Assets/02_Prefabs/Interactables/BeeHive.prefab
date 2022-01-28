@@ -112,7 +112,7 @@ MonoBehaviour:
   onEnterSFXs: []
   onInteractionSFXs: []
   setupEventTriggers: 1
-  interactionLoadTime: 1
+  interactionLoadTime: 0.75
   rechargeInteraction: 1
   loadImage: {fileID: 8207598433719298629}
   loadCanvas: {fileID: 3690994455795420521}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: EfeitosProfile
+  m_Name: Bee_EfeitosProfile
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 953125413201325222}
@@ -76,10 +76,10 @@ MonoBehaviour:
     value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 0
-    value: 0
+    value: 180
   saturation:
     overrideState: 1
-    value: 70
+    value: 100
   brightness:
     overrideState: 0
     value: 0
@@ -88,34 +88,34 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 10
+    value: 30
   mixerRedOutRedIn:
     overrideState: 0
-    value: -200
+    value: 0
   mixerRedOutGreenIn:
     overrideState: 0
-    value: -200
+    value: 0
   mixerRedOutBlueIn:
-    overrideState: 0
-    value: -200
+    overrideState: 1
+    value: 45
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
   mixerGreenOutGreenIn:
     overrideState: 1
-    value: 150
+    value: 100
   mixerGreenOutBlueIn:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
     overrideState: 0
-    value: 0
+    value: 200
   mixerBlueOutGreenIn:
     overrideState: 0
     value: 0
   mixerBlueOutBlueIn:
     overrideState: 1
-    value: 150
+    value: 100
   lift:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}

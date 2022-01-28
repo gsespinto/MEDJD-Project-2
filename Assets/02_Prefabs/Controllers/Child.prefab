@@ -196,7 +196,7 @@ MonoBehaviour:
   - informationText: {fileID: 0}
     additionalInformation: 
     reminder:
-      clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
+      clip: {fileID: 8300000, guid: 40afa5ac11a4e0043ac47287b13bb7f1, type: 3}
       caption: What did you want to tell me, honey?
       sourceIndex: 1
       owner: Mom
@@ -205,7 +205,7 @@ MonoBehaviour:
   - informationText: {fileID: 5447653436541937075}
     additionalInformation: 
     reminder:
-      clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
+      clip: {fileID: 8300000, guid: 521c6d51c2d3a744eab5d3b1e727c71a, type: 3}
       caption: Use some of the fruits from the basket to feed the birds around us.
       sourceIndex: 1
       owner: Mom
@@ -612,7 +612,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7866c64e7c89b3f4b9f13ce05697acd4,
+      objectReference: {fileID: 21300000, guid: 243bf2eae9dd7b545965b9aa98df13a6,
         type: 3}
     - target: {fileID: 2407188327598200910, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
@@ -933,7 +933,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b969ace00d322541971b73acfcb6ae1,
+      objectReference: {fileID: 21300000, guid: d9c043b3d84281b41bf928a95f7de53f,
         type: 3}
     - target: {fileID: 1650267762998982597, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: EfeitosProfile
+  m_Name: Bird_EfeitosProfile
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 953125413201325222}
@@ -90,32 +90,32 @@ MonoBehaviour:
     overrideState: 1
     value: 10
   mixerRedOutRedIn:
-    overrideState: 1
-    value: 200
+    overrideState: 0
+    value: -200
   mixerRedOutGreenIn:
     overrideState: 0
-    value: 200
+    value: -200
   mixerRedOutBlueIn:
     overrideState: 0
-    value: 0
+    value: -200
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
   mixerGreenOutGreenIn:
     overrideState: 1
-    value: 200
+    value: 150
   mixerGreenOutBlueIn:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
     overrideState: 0
-    value: -3
+    value: 0
   mixerBlueOutGreenIn:
     overrideState: 0
     value: 0
   mixerBlueOutBlueIn:
-    overrideState: 0
-    value: 75
+    overrideState: 1
+    value: 150
   lift:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}

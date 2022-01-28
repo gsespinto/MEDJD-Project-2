@@ -151,7 +151,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.97
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8179650757879008714}
   onEnterSFXs:
-  - {fileID: 8300000, guid: 894c7638ef3e49f4c83e4cd57f02a646, type: 3}
+  - {fileID: 8300000, guid: e5e58683f181c0140a463411b5a5dcf5, type: 3}
   onInteractionSFXs: []
   setupEventTriggers: 1
   interactionLoadTime: 0

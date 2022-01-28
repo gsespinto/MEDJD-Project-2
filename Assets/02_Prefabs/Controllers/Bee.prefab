@@ -361,10 +361,10 @@ MonoBehaviour:
   flowerColors:
   - flower: 2
     beforeColor: {r: 0.9056604, g: 0.5767177, b: 0.5767177, a: 0.5882353}
-    afterColor: {r: 1, g: 0, b: 0, a: 0.5882353}
+    afterColor: {r: 0.7924528, g: 0.043193806, b: 0.0037379938, a: 0.5882353}
   - flower: 3
-    beforeColor: {r: 0.6069776, g: 0.8301887, b: 0.8254895, a: 0.5882353}
-    afterColor: {r: 0, g: 0.63959944, b: 0.8962264, a: 0.5882353}
+    beforeColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.5882353}
+    afterColor: {r: 1, g: 1, b: 1, a: 0.5882353}
 --- !u!82 &2649991135431188836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.97
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -575,21 +575,21 @@ MonoBehaviour:
   - informationText: {fileID: 658144918817347119}
     additionalInformation: 
     reminder:
-      clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: Use the flower's pollen to make honey.
+      clip: {fileID: 8300000, guid: 86f9f89822a2b8947a72e576d5b04571, type: 3}
+      caption: Bees take pollen from flowers to their hives to make honey.
       sourceIndex: 0
-      owner: 
-      ownerColor: {r: 0, g: 0, b: 0, a: 0}
-    reminderTimerRange: {x: 20, y: 40}
+      owner: Mom
+      ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+    reminderTimerRange: {x: 30, y: 60}
   - informationText: {fileID: 7077564157049156207}
     additionalInformation: 
     reminder:
-      clip: {fileID: 8300000, guid: 1dcb3c878f261d94ea2457f72b5bbe55, type: 3}
-      caption: Polonize flowers using the correct pollen.
+      clip: {fileID: 8300000, guid: 6ce96ae3c9dd75b4eb071683718daa53, type: 3}
+      caption: Bees take polle from matching flowers to polonize them.
       sourceIndex: 0
-      owner: 
-      ownerColor: {r: 0, g: 0, b: 0, a: 0}
-    reminderTimerRange: {x: 10, y: 30}
+      owner: Mom
+      ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+    reminderTimerRange: {x: 25, y: 45}
   nextScene: 0
   objectiveRefreshTime: 1
   objectiveIndicators: []
@@ -1628,7 +1628,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28d2cb9bacc78264eada2fa463c1a100,
+      objectReference: {fileID: 21300000, guid: 258e5785a32c49c408eff6af49e1a482,
         type: 3}
     - target: {fileID: 1650267762998982597, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}
@@ -1842,7 +1842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 723926960, guid: 60270cf52a5e94998a5a335989159738, type: 3}
       propertyPath: maxReticleDistance
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60270cf52a5e94998a5a335989159738, type: 3}
@@ -2086,6 +2086,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1770067631237924283, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9abcaf914391d24bba94b2b51955102,
+        type: 3}
     - target: {fileID: 2407188327598200910, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -2159,22 +2165,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2a22bcdd684172f4db5eb166360fdf27,
+      objectReference: {fileID: 21300000, guid: 03111d47732c87d459efaa5c42232143,
         type: 3}
     - target: {fileID: 1113689481635777371, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.4759256
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1113689481635777371, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.58813506
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1113689481635777371, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.6509434
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1650267762998982597, guid: eb9e933413670c84686e71c58dc516fd,
         type: 3}
