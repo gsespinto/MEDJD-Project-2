@@ -74810,7 +74810,7 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 0}
   vfxTarget: {fileID: 0}
   narrations:
-  - clip: {fileID: 8300000, guid: f76c77598d62df646a3f09cfde9e2f9b, type: 3}
+  - clip: {fileID: 8300000, guid: da6fe6b17da01004db857634d6aff28f, type: 3}
     caption: With what we did and didn't do, there's no going back.
     sourceIndex: 0
     owner: 

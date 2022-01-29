@@ -585,7 +585,7 @@ MonoBehaviour:
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: 6ce96ae3c9dd75b4eb071683718daa53, type: 3}
-      caption: Bees take polle from matching flowers to polonize them.
+      caption: Bees take pollen from matching flowers to polonize them.
       sourceIndex: 0
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
@@ -605,9 +605,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8aabcdf06151fd4b860a49abd57273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTimer: 60
+  fireTimer: 300
   fireSlider: {fileID: 6545971716331571787}
-  badEndingLevelIndex: 0
+  fireAudioSources: []
+  badEndingLevelIndex: 5
 --- !u!1 &2827357162429258460
 GameObject:
   m_ObjectHideFlags: 0

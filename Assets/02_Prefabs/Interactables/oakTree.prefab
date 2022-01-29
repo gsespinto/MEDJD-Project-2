@@ -117,6 +117,7 @@ MonoBehaviour:
   objectsToDestroy:
   - {fileID: 5191063073584241396}
   - {fileID: 1549962098258803620}
+  destroyOneByOne: 0
 --- !u!65 &7613098573812090365
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -200,7 +201,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
