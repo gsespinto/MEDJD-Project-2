@@ -48,7 +48,7 @@ public class Interactable : MonoBehaviour
         LoadInteraction();
     }
 
-    // Set if the interactable is gazed at
+    ///<summary> Set if the interactable is gazed at </summary>
     protected virtual void SetGazedAt(bool gazedAt)
     {
         // Engages interaction loading

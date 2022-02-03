@@ -44,7 +44,7 @@ public class FireTimer : MonoBehaviour
 
     void LoadBadEnding()
     {
-        LoadingFunctionLibrary.LoadScene(badEndingLevelIndex);
+        LoadingManager.LoadScene(badEndingLevelIndex);
     }
 
     void UpdateAudioVisuals()

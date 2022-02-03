@@ -110,10 +110,9 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: 46ef0d25aa0dba5459454d33d992dfb4,
     type: 3}
   vfxTarget: {fileID: 5189141231517222246}
-  objectiveIndex: 0
   itemToGive: 1
   acceptedItems: 
-  destroyTimer: 2
+  destroyTimer: 0
   objectsToDestroy:
   - {fileID: 5191063073584241396}
   - {fileID: 1549962098258803620}

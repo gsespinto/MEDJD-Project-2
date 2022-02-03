@@ -76,7 +76,10 @@ public class PlanetMovement : MonoBehaviour
     {
         // Do nothing if there's no camera reference
         if (!cam)
+        {
+            Debug.LogWarning("Invalid camera reference.", this);
             return;
+        }
         
         // Calculate turn angle according with z rotation of camera
         if (Mathf.Abs(cam.transform.localRotation.z) > turnDeadAngle)
@@ -98,7 +101,10 @@ public class PlanetMovement : MonoBehaviour
     {
         // Null ref protection
         if (flyingSources.Length <= 0)
+        {
+            Debug.LogWarning("Missing flying audio sources.", this);
             return;
+        }
 
         // Set volume according to turn angle
         float volume = Mathf.Clamp(Mathf.Abs(turnAngle) / maxWindRotationValue, minWindVolume, maxWindVolume);

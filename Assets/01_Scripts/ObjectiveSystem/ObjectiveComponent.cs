@@ -55,7 +55,7 @@ public class ObjectiveComponent : MonoBehaviour
     {
 
         finishedLevel = true;
-        LoadingFunctionLibrary.LoadScene(nextScene);
+        LoadingManager.LoadScene(nextScene);
     }
 
     /// <summary> Updates given objective with given description and updates visuals </summary>

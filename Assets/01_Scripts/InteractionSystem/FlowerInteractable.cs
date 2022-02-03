@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowerInteractable : ItemInteractable
+public class FlowerInteractable : ScoreItem
 {
+    [Header("Flower")]
     [SerializeField] GameObject polenVFX;
     [SerializeField] int materialToChangeIndex;
     [SerializeField] MeshRenderer flowerMesh;
@@ -11,8 +13,8 @@ public class FlowerInteractable : ItemInteractable
     private bool hasGivenPolen = false;
     private bool hasReceivedPolen = false;
 
-    [SerializeField] private Color beforeColor = Color.black;
-    [SerializeField] private Color afterColor = Color.black;
+    private Color beforeColor = Color.black;
+    private Color afterColor = Color.black;
 
     protected override void Start()
     {
@@ -75,6 +77,8 @@ public class FlowerInteractable : ItemInteractable
         return currentInteractionLoadTime <= 0 && itemCondition;
     }
 
+    /// <summary> Attempts to receive item from container script </summary>
+    /// <returns> If has received item successfully </returns>
     protected override bool ReceiveItem()
     {
         // If it has received polen
@@ -95,6 +99,8 @@ public class FlowerInteractable : ItemInteractable
         return true;
     }
 
+    /// <summary> Attempts to give item from container script </summary>
+    /// <returns> If has given item successfully </returns>
     protected override bool GiveItem()
     {
         // If it has given polen

@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2376287336678407454}
   - component: {fileID: 5340770475569774753}
   - component: {fileID: 6592110492901373966}
-  - component: {fileID: 2430372889084446725}
+  - component: {fileID: 3899231552207541812}
   m_Layer: 0
   m_Name: NestInteractable
   m_TagString: Untagged
@@ -273,7 +273,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2430372889084446725
+--- !u!114 &3899231552207541812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8144443259667496596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b709482d061797478fc7a950cf77b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d92b9a7f836648459aad9877d7deb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 6592110492901373966}
@@ -298,12 +298,12 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: f0a08d9bd0b40b44981377333ae75034,
     type: 3}
   vfxTarget: {fileID: 4655033673138478294}
-  objectiveIndex: 0
   itemToGive: 0
   acceptedItems: 01000000
   destroyTimer: 0
   objectsToDestroy: []
   destroyOneByOne: 0
+  objectiveIndex: 0
 --- !u!1 &8577159757073903996
 GameObject:
   m_ObjectHideFlags: 0

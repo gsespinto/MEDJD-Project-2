@@ -68,20 +68,21 @@ public class NarrationComponent : MonoBehaviour
         if (narrationSources.Length <= 0)
             return;
 
-        // If no narration is playing and caption is active
-        // Hide caption
-        // Reset currentNarrationSource ref
-        if (currentNarrationSource && !currentNarrationSource.isPlaying
-        && captionText && captionText.gameObject.activeInHierarchy)
+        // If there's no clips to be played
+        if (clipsQueue.Count <= 0)
         {
-            captionText.gameObject.SetActive(false);
-            currentNarrationSource = null;
+            // If no narration is playing and caption is active
+            // Hide caption
+            // Reset currentNarrationSource ref
+            if (currentNarrationSource && !currentNarrationSource.isPlaying
+            && captionText && captionText.gameObject.activeInHierarchy)
+            {
+                captionText.gameObject.SetActive(false);
+                currentNarrationSource = null;
+            }
+
             return;
         }
-
-        // If there's no clips to be played, do nothing
-        if (clipsQueue.Count <= 0)
-            return;
 
         // If the audio source is playing, do nothing
         if (currentNarrationSource != null && currentNarrationSource.isPlaying)
@@ -89,6 +90,13 @@ public class NarrationComponent : MonoBehaviour
 
         // Set narration source that'll play
         currentNarrationSource = narrationSources[Mathf.Clamp(clipsQueue[0].sourceIndex, 0, narrationSources.Length - 1)];
+
+        // Null ref protection
+        if (!currentNarrationSource)
+        {
+            Debug.LogWarning("Invalid narration audio source reference.", this);
+            return;
+        }
 
         // Play clip
         currentNarrationSource.PlayOneShot(clipsQueue[0].clip);
@@ -121,7 +129,10 @@ public class NarrationComponent : MonoBehaviour
     {
         // Null ref protection
         if (!sfxSource)
+        {
+            Debug.LogWarning("Missing sfx source reference.", this);
             return;
+        }
 
         sfxSource.PlayOneShot(clip);
     }

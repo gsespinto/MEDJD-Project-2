@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127877403017158994}
   - component: {fileID: 1954703830170543756}
-  - component: {fileID: 1733463576408490538}
+  - component: {fileID: 8274478368457364160}
   - component: {fileID: 9180741878622114773}
   - component: {fileID: 8838469156592692243}
   - component: {fileID: 3455478611878521231}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &1733463576408490538
+--- !u!114 &8274478368457364160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4127877403017264498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b709482d061797478fc7a950cf77b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d92b9a7f836648459aad9877d7deb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3455478611878521231}
@@ -74,13 +74,13 @@ MonoBehaviour:
   loadCanvas: {fileID: 3690994455795420521}
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: 5ae78de9a2b602e4e81567a8c5aa1c07,
     type: 3}
-  vfxTarget: {fileID: 4127877403017158994}
-  objectiveIndex: 0
+  vfxTarget: {fileID: 6381570835538923589}
   itemToGive: 0
   acceptedItems: 0200000003000000
   destroyTimer: 0
   objectsToDestroy: []
   destroyOneByOne: 0
+  objectiveIndex: 0
 --- !u!65 &9180741878622114773
 BoxCollider:
   m_ObjectHideFlags: 0

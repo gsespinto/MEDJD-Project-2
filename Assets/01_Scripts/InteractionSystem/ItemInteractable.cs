@@ -7,9 +7,7 @@ public class ItemInteractable : Interactable
 {
 
     [Header("Interaction")]
-    [SerializeField] private int objectiveIndex;
     protected ItemContainer containerScript;
-    ScoreScript scoreScript;
 
     [Header("Giving")]
     [SerializeField] protected EItem itemToGive;
@@ -26,17 +24,6 @@ public class ItemInteractable : Interactable
     {
         // Get ContainerScript ref
         containerScript = GameObject.FindObjectOfType<ItemContainer>();
-
-        // Get correspondent ScoreScript ref from scene
-        ScoreScript[] scoreScripts = GameObject.FindObjectsOfType<ScoreScript>();
-        foreach (ScoreScript sc in scoreScripts)
-        {
-            if (sc.objectiveIndex == objectiveIndex)
-            {
-                scoreScript = sc;
-                break;
-            }
-        }
 
         base.Start();
     }
@@ -97,7 +84,7 @@ public class ItemInteractable : Interactable
         // Can give item if the player doens't hold any item
         // If this script has an item to give
         bool canGive = containerScript.Item == EItem.NONE && itemToGive != EItem.NONE;
-
+        
         bool itemCondition = canGive || canReceive;
 
         // Has the interaction loaded?
@@ -178,21 +165,12 @@ public class ItemInteractable : Interactable
             return false;
         }
 
-        // Null ref protection
-        if (!scoreScript)
-        {
-            Debug.LogWarning("Missing score script reference.", this);
-            return false;
-        }
-
         // If this script doesn't accept any items
         // Do nothing
         if (acceptedItems.Count <= 0)
             return false;
 
-        // Increase score
         // Reset containter script item value
-        scoreScript.ChangeScore(+1);
         containerScript.SetItem(EItem.NONE, null);
 
         return true;

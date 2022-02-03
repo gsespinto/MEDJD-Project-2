@@ -166,8 +166,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cf85b9ad9e78f7243ba10356761cb2b9, type: 2}
+  m_sharedMaterial: {fileID: 3563870462770454441, guid: cf85b9ad9e78f7243ba10356761cb2b9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -340,6 +341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Corners
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292622498808305445, guid: f683c84baec84174ab09c08b762ef105,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4846545273345396115, guid: f683c84baec84174ab09c08b762ef105,
         type: 3}

@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 2376287336678407454}
   - component: {fileID: 5340770475569774753}
   - component: {fileID: 4398227938058221164}
-  - component: {fileID: 5795480357759158028}
+  - component: {fileID: 5107046246649578802}
   m_Layer: 0
   m_Name: TestBirdInteractable
   m_TagString: Untagged
@@ -385,7 +385,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5795480357759158028
+--- !u!114 &5107046246649578802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8144443259667496596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b709482d061797478fc7a950cf77b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d92b9a7f836648459aad9877d7deb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4398227938058221164}
@@ -410,13 +410,13 @@ MonoBehaviour:
   interactionVfxPrefab: {fileID: 8922192642532342204, guid: 0361e1733c65b53429dc92124e58773e,
     type: 3}
   vfxTarget: {fileID: 5958014216536013102}
-  objectiveIndex: 1
   itemToGive: 0
   acceptedItems: 01000000
   destroyTimer: 0
   objectsToDestroy:
-  - {fileID: 5795480357759158028}
+  - {fileID: 5107046246649578802}
   destroyOneByOne: 0
+  objectiveIndex: 1
 --- !u!1001 &942589039031650633
 PrefabInstance:
   m_ObjectHideFlags: 0

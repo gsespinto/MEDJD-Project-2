@@ -12,17 +12,14 @@ public class NarrationInteractable : Interactable
     {
         base.Start();
 
+        // Get narration component ref
         narrationComponent = GameObject.FindObjectOfType<NarrationComponent>();
     }
 
     protected override void SetGazedAt(bool gazedAt)
     {
-        if (!narrationComponent)
-        {
-            base.SetGazedAt(false);
-            return;
-        }
-
+        // If it has already queued the narrations
+        // Can't be gazed at
         if (ClipsHaveBeenQueued())
         {
             base.SetGazedAt(false);
@@ -32,8 +29,23 @@ public class NarrationInteractable : Interactable
         base.SetGazedAt(gazedAt);
     }
 
+    /// <returns> True if all narrations have been queued in the narration component </returns>
     bool ClipsHaveBeenQueued()
     {
+        // Null ref protection
+        if (narrations.Length <= 0)
+        {
+            Debug.LogWarning("Narration array empty.", this);
+            return true;
+        }
+
+        // Null ref protection
+        if (!narrationComponent)
+        {
+            Debug.LogWarning("Invalid narration component reference.", this);
+            return true;
+        }
+
         foreach (FNarration narration in narrations)
         {
             if (!narrationComponent.HasClip(narration))
@@ -45,11 +57,8 @@ public class NarrationInteractable : Interactable
 
     public override bool CanInteract()
     {
-        if (!narrationComponent)
-        {
-            return false;
-        }
-
+        // If it has already queued the narrations
+        // Can't be interacted with
         if (ClipsHaveBeenQueued())
         {
             return false;
@@ -60,22 +69,6 @@ public class NarrationInteractable : Interactable
 
     public override void OnInteraction()
     {
-        // Null ref protection
-        if (!narrationComponent)
-        {
-            Debug.LogWarning("Missing narration component reference.", this);
-            return;
-        }
-
-        // Null ref protection
-        if (narrations.Length <= 0)
-        {
-            Debug.LogWarning("Narration array empty.", this);
-            return;
-        }
-
-
-        // Only interact if the interaction is loaded
         if (!CanInteract())
             return;
 

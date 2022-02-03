@@ -12,6 +12,7 @@ public class FlowerContainer : ItemContainer
         flowerColors = this.GetComponent<FlowerColors>();
     }
 
+    /// <summary> Sets current item being held by container and the object that gave it </summary>
     public override void SetItem(EItem _item, ItemInteractable _giver)
     {
         base.SetItem(_item, _giver);
