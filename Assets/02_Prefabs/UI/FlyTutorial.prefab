@@ -366,7 +366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -115}
+  m_AnchoredPosition: {x: 0, y: -58}
   m_SizeDelta: {x: 525.1, y: 81}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2969155630859836399
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you control your flight direction by tilting your head
+  m_text: when flying, tilt your head to turn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf85b9ad9e78f7243ba10356761cb2b9, type: 2}
   m_sharedMaterial: {fileID: 3563870462770454441, guid: cf85b9ad9e78f7243ba10356761cb2b9,
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 50
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -465,12 +465,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2622341635350126115}
-    characterCount: 54
+    characterCount: 35
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 9
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

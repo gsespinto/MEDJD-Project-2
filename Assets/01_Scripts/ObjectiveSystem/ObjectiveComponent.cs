@@ -11,6 +11,14 @@ public class ObjectiveComponent : MonoBehaviour
     [SerializeField] private FNarration[] objectiveIndicators;
     bool finishedLevel = false;
 
+    public delegate void UpdateObjectiveCallback(int objetiveIndex);
+    public UpdateObjectiveCallback OnUpdateObjective;
+
+    void Awake()
+    {
+        OnUpdateObjective += UpdateObjective;
+    }
+
     void Start()
     {
         foreach (ObjectiveInfo oi in objectives)
@@ -58,21 +66,8 @@ public class ObjectiveComponent : MonoBehaviour
         LoadingManager.LoadScene(nextScene);
     }
 
-    /// <summary> Updates given objective with given description and updates visuals </summary>
-    public void UpdateObjective(int objectiveIndex)
-    {
-        // If there are no objectives
-        // Do nothing
-        if (objectives.Length <= 0)
-            return;
-
-        // Clamp given index
-        objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
-        objectives[objectiveIndex].ResetReminder();
-    }
-
     /// <summary> Updates given objective with given additional information and updates visuals </summary>
-    public void UpdateObjective(int objectiveIndex, string addedInformation)
+    private void UpdateObjective(int objectiveIndex)
     {
         if (objectives.Length <= 0)
             return;
@@ -80,8 +75,17 @@ public class ObjectiveComponent : MonoBehaviour
         // Clamp given index
         objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
         // Change additional information
-        objectives[objectiveIndex].SetAdditionalInformation(addedInformation);
         objectives[objectiveIndex].ResetReminder();
+    }
+
+    public void UpdateObjectiveInfo(int objectiveIndex, string addedInformation)
+    {
+        if (objectives.Length <= 0)
+            return;
+
+        // Clamp given index
+        objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
+        objectives[objectiveIndex].SetAdditionalInformation(addedInformation);
     }
 
     void TickObjectivesReminder()

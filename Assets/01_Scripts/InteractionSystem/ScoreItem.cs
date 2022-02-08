@@ -25,6 +25,8 @@ public class ScoreItem : ItemInteractable
         }
     }
 
+
+
     protected override bool ReceiveItem()
     {
         // Null ref protection
@@ -39,6 +41,26 @@ public class ScoreItem : ItemInteractable
         {
             // Increase score
             scoreScript.ChangeScore(+1);
+            return true;
+        }
+
+        return false;
+    }
+
+    protected override bool GiveItem()
+    {
+        // Null ref protection
+        if (!scoreScript)
+        {
+            Debug.LogWarning("Missing score script reference.", this);
+            return false;
+        }
+
+        // If has received item
+        if (base.GiveItem())
+        {
+            // Update objective
+            scoreScript.UpdateObjective(objectiveIndex);
             return true;
         }
 

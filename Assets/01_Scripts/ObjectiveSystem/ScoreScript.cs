@@ -31,7 +31,8 @@ public class ScoreScript : MonoBehaviour
         currentScore += amount;
         // Update visuals
         string info = "[" + currentScore + " / " + targetScore + "]";
-        objectiveComponent.UpdateObjective(objectiveIndex, info);
+        objectiveComponent.UpdateObjectiveInfo(objectiveIndex, info);
+        objectiveComponent.OnUpdateObjective(objectiveIndex);
 
         // If score has reached its target value
         // Complete objective
@@ -53,4 +54,15 @@ public class ScoreScript : MonoBehaviour
         objectiveComponent.CompleteObjective(objectiveIndex);
     }
 
+    public void UpdateObjective(int index)
+    {
+        // Null ref protection
+        if (!objectiveComponent)
+        {
+            Debug.LogWarning("Missing objectives component reference.", this);
+            return;
+        }
+
+        objectiveComponent.OnUpdateObjective(index);
+    }
 }

@@ -44,8 +44,8 @@ public class NarrativeObjective : NarrationInteractable
 
         base.OnInteraction();
 
-        // Update parent objective description
-        GameObject.FindObjectOfType<ObjectiveComponent>().UpdateObjective(objectiveIndex);
+        // Update narrative objective
+        objectiveComponent.OnUpdateObjective(objectiveIndex);
         // Has queued clips
         hasQueuedClips = true;
 }

@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: once loaded, the pointer will change visuals
+  m_text: the pointer will change when the interaction is ready
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf85b9ad9e78f7243ba10356761cb2b9, type: 2}
   m_sharedMaterial: {fileID: 3563870462770454441, guid: cf85b9ad9e78f7243ba10356761cb2b9,
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 37
+  m_firstOverflowCharacterIndex: 33
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -384,10 +384,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1821714450885585842}
-    characterCount: 44
+    characterCount: 53
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 8
+    wordCount: 9
     linkCount: 0
     lineCount: 3
     pageCount: 1
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: to load interaction look at interactable with the pointer
+  m_text: load interactions by looking at the object
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf85b9ad9e78f7243ba10356761cb2b9, type: 2}
   m_sharedMaterial: {fileID: 3563870462770454441, guid: cf85b9ad9e78f7243ba10356761cb2b9,
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 41
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -728,12 +728,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 3727304139290124435}
-    characterCount: 57
+    characterCount: 42
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 9
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: then you can interact pressing the cardboard button
+  m_text: then you can interact with it by pressing the cardboard button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf85b9ad9e78f7243ba10356761cb2b9, type: 2}
   m_sharedMaterial: {fileID: 3563870462770454441, guid: cf85b9ad9e78f7243ba10356761cb2b9,
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 45
+  m_firstOverflowCharacterIndex: 46
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -885,10 +885,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1511058843366087884}
-    characterCount: 51
+    characterCount: 62
     spriteCount: 0
-    spaceCount: 7
-    wordCount: 8
+    spaceCount: 10
+    wordCount: 11
     linkCount: 0
     lineCount: 3
     pageCount: 1
