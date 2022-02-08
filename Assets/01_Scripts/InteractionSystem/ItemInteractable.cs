@@ -50,7 +50,7 @@ public class ItemInteractable : Interactable
         // If the player has no item
         // and there's no item to give
         // Can't be gaze
-        if (containerScript.Item == EItem.NONE && itemToGive == EItem.NONE)
+        if (containerScript.CurrentItem == EItem.NONE && itemToGive == EItem.NONE)
         {
             base.SetGazedAt(false);
             return;
@@ -59,7 +59,7 @@ public class ItemInteractable : Interactable
         // If the player has an item
         // and this script doesn't accept it
         // can't gaze
-        if (containerScript.Item != EItem.NONE && !acceptedItems.Contains(containerScript.Item))
+        if (containerScript.CurrentItem != EItem.NONE && !acceptedItems.Contains(containerScript.CurrentItem))
         {
            base.SetGazedAt(false);
             return;
@@ -79,11 +79,11 @@ public class ItemInteractable : Interactable
 
         // Can receive item if the script accepts the item the player contains
         // If this isn't the item interactable that gave the item
-        bool canReceive = (acceptedItems.Contains(containerScript.Item) && containerScript.Giver != this);
+        bool canReceive = (acceptedItems.Contains(containerScript.CurrentItem) && containerScript.Giver != this);
 
         // Can give item if the player doens't hold any item
         // If this script has an item to give
-        bool canGive = containerScript.Item == EItem.NONE && itemToGive != EItem.NONE;
+        bool canGive = containerScript.CurrentItem == EItem.NONE && itemToGive != EItem.NONE;
         
         bool itemCondition = canGive || canReceive;
 
@@ -99,7 +99,7 @@ public class ItemInteractable : Interactable
 
         // If the player holds an item
         // Then try to receive it
-        if (containerScript.Item != EItem.NONE)
+        if (containerScript.CurrentItem != EItem.NONE)
         {
             ReceiveItem();
         }

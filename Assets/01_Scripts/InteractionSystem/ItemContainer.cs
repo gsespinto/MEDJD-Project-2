@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class ItemContainer : MonoBehaviour
 {
-    private EItem item = EItem.NONE;
-    [SerializeField] protected Image itemIcon;
+    private EItem currentItem = EItem.NONE;
     private ItemInteractable giver;
+
+    [Header("Visuals")]
+    [SerializeField] protected Image itemImage;
+    [SerializeField] private FItemIcon[] itemIcons;
 
     private void Awake()
     {
@@ -15,9 +18,9 @@ public class ItemContainer : MonoBehaviour
     }
 
     /// <summary> Item that is being held </summary>
-    public EItem Item 
+    public EItem CurrentItem 
     {
-        get { return item; }
+        get { return currentItem; }
     }
 
     /// <summary> Script that has given the item </summary>
@@ -32,7 +35,7 @@ public class ItemContainer : MonoBehaviour
     public virtual void SetItem(EItem _item, ItemInteractable _giver)
     {
         // Update values to correspond to given
-        item = _item;
+        currentItem = _item;
         giver = _giver;
 
         UpdateItemIconVisibility();
@@ -42,11 +45,19 @@ public class ItemContainer : MonoBehaviour
     void UpdateItemIconVisibility()
     {
         // Null ref protection
-        if (!itemIcon)
+        if (!itemImage)
         {
             return;
         }
 
-        itemIcon.gameObject.SetActive(item != EItem.NONE);
+        foreach(FItemIcon icon in itemIcons)
+        {
+            if (icon.item != currentItem)
+                continue;
+
+            itemImage.sprite = icon.icon;
+        }
+
+        itemImage.gameObject.SetActive(currentItem != EItem.NONE);
     }
 }

@@ -25,6 +25,6 @@ public class FlowerContainer : ItemContainer
         }
 
         // Change item icon color to match given item
-        itemIcon.color = flowerColors.GetAfterColor(_item);
+        itemImage.color = flowerColors.GetAfterColor(_item);
     }
 }

@@ -25,3 +25,10 @@ public struct FPolenColor
     public Color beforeColor;
     public Color afterColor;
 }
+
+[System.Serializable]
+public struct FItemIcon
+{
+    public EItem item;
+    public Sprite icon;
+}

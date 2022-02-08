@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlowerInteractable : ScoreItem
 {
     [Header("Flower")]
-    [SerializeField] GameObject polenVFX;
+    [SerializeField] ParticleSystem polenVFX;
+    [SerializeField] Image arrow;
     [SerializeField] int materialToChangeIndex;
     [SerializeField] MeshRenderer flowerMesh;
 
@@ -24,6 +26,52 @@ public class FlowerInteractable : ScoreItem
         ChangeColor(beforeColor, materialToChangeIndex);
     }
 
+    protected void FixedUpdate()
+    {
+        HandlePolenVFX();
+        HandleArrow();
+    }
+
+    void HandleArrow()
+    {
+        if (!arrow || !containerScript)
+            return;
+
+        if (containerScript.CurrentItem != EItem.NONE && containerScript.Giver != this)
+        {
+            if (arrow.gameObject.activeInHierarchy)
+                return;
+
+            arrow.gameObject.SetActive(true);
+            return;
+        }
+
+        if (!arrow.gameObject.activeInHierarchy)
+            return;
+
+        arrow.gameObject.SetActive(false);
+    }
+
+    void HandlePolenVFX()
+    {
+        if (!polenVFX || !containerScript)
+            return;
+
+        if (containerScript.CurrentItem == EItem.NONE)
+        {
+            if (polenVFX.isPlaying)
+                return;
+
+            polenVFX.Play(); ;
+            return;
+        }
+
+        if (polenVFX.isStopped)
+            return;
+
+        polenVFX.Stop();
+    }
+
     protected override void SetGazedAt(bool gazedAt)
     {
         // Null ref protection
@@ -35,14 +83,14 @@ public class FlowerInteractable : ScoreItem
         }
 
         // Can't receive polen if it already has
-        if (containerScript.Item != EItem.NONE && hasReceivedPolen)
+        if (containerScript.CurrentItem != EItem.NONE && hasReceivedPolen)
         {
             base.SetGazedAt(false);
             return;
         }
 
         // Can't give polen if it already has
-        if (containerScript.Item == EItem.NONE && hasGivenPolen)
+        if (containerScript.CurrentItem == EItem.NONE && hasGivenPolen)
         {
             base.SetGazedAt(false);
             return;
@@ -63,12 +111,12 @@ public class FlowerInteractable : ScoreItem
         // Can receive item if the script accepts the item the player contains
         // If this isn't the item interactable that gave the item
         // And if it hasn't received polen
-        bool canReceive = (acceptedItems.Contains(containerScript.Item) && containerScript.Giver != this) && !hasReceivedPolen;
+        bool canReceive = (acceptedItems.Contains(containerScript.CurrentItem) && containerScript.Giver != this) && !hasReceivedPolen;
 
         // Can give item if the player doens't hold any item
         // If this script has an item to give
         // And if it hasn't given polen
-        bool canGive = containerScript.Item == EItem.NONE && itemToGive != EItem.NONE && !hasGivenPolen;
+        bool canGive = containerScript.CurrentItem == EItem.NONE && itemToGive != EItem.NONE && !hasGivenPolen;
 
         bool itemCondition = canGive || canReceive;
 
@@ -93,6 +141,8 @@ public class FlowerInteractable : ScoreItem
 
         // Receive polen and make visual changes
         hasReceivedPolen = true;
+        if (arrow)
+            Destroy(arrow);
         ChangeColor(afterColor, materialToChangeIndex);
 
         DestroyScript();
@@ -116,7 +166,7 @@ public class FlowerInteractable : ScoreItem
         // Give polen and make visual changes
         hasGivenPolen = true;
         if (polenVFX)
-            polenVFX.SetActive(false);
+            Destroy(polenVFX);
 
         DestroyScript();
         return true;
@@ -161,6 +211,8 @@ public class FlowerInteractable : ScoreItem
         // Get corrspondent before and after colors
         beforeColor = flowerColors.GetBeforeColor(itemToGive);
         afterColor = flowerColors.GetAfterColor(itemToGive);
+        if (arrow)
+            arrow.color = afterColor;
     }
 
     /// <summary> If this flower has given and received polen, destroy script </summary>

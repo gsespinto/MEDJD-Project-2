@@ -909,7 +909,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveIndex: 1
   tutorialVisuals:
-  - objects: []
   - objects:
     - {fileID: 195615665}
   - objects:
