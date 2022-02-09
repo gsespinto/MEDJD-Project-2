@@ -21,14 +21,20 @@ public struct FNarration
 [System.Serializable]
 public struct FPolenColor
 {
+
+    /// <summary> Type of flower </summary>
     public EItem flower;
+    /// <summary> Color before receiving polen </summary>
     public Color beforeColor;
+    /// <summary> Color after receiving polen </summary>
     public Color afterColor;
 }
 
 [System.Serializable]
 public struct FItemIcon
 {
+    /// <summary> Item type </summary>
     public EItem item;
+    /// <summary> Icon to display when picked up </summary>
     public Sprite icon;
 }

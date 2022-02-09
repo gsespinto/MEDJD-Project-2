@@ -8,11 +8,13 @@ public class VolumeManager : MonoBehaviour
 {
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] float minVolume = -60.0f;
+
     [Space(10)]
     [SerializeField] AudioSource sfxSource;
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource narrationSource;
     [SerializeField] AudioSource ambientSource;
+
     [Space(10)]
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
@@ -50,9 +52,8 @@ public class VolumeManager : MonoBehaviour
             return;
         }
 
-        float value;
-
-        if (!audioMixer.GetFloat(groupName, out value))
+        // Get group volume value
+        if (!audioMixer.GetFloat(groupName, out float value))
         {
             // Null ref protection
             Debug.LogWarning("Couldn't find " + groupName + " group in Audio mixer.", this);

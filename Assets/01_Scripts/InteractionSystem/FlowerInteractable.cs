@@ -32,11 +32,15 @@ public class FlowerInteractable : ScoreItem
         HandleArrow();
     }
 
+    /// <summary> Handles flower's arrow visibility </summary>
     void HandleArrow()
     {
+        // Null ref protection
         if (!arrow || !containerScript)
             return;
 
+        // If the play has an item and this script isn't the giver
+        // Show arrow
         if (containerScript.CurrentItem != EItem.NONE && containerScript.Giver != this)
         {
             if (arrow.gameObject.activeInHierarchy)
@@ -46,17 +50,23 @@ public class FlowerInteractable : ScoreItem
             return;
         }
 
+        // If the player hasn't got an item or this is the giver
+        // Hide arrow
         if (!arrow.gameObject.activeInHierarchy)
             return;
 
         arrow.gameObject.SetActive(false);
     }
 
+    /// <summary> Handles flower's polen vfx visibility </summary>
     void HandlePolenVFX()
     {
+        // Null ref protection
         if (!polenVFX || !containerScript)
             return;
 
+        // If the player hasn't got an item
+        // Play polen vfx
         if (containerScript.CurrentItem == EItem.NONE)
         {
             if (polenVFX.isPlaying)
@@ -66,6 +76,8 @@ public class FlowerInteractable : ScoreItem
             return;
         }
 
+        // If the player has an item
+        // Stop polen VFX
         if (polenVFX.isStopped)
             return;
 
@@ -178,6 +190,7 @@ public class FlowerInteractable : ScoreItem
         SetGazedAt(true);
     }
 
+    /// <summary> Changes mesh's material color of the given index </summary>
     void ChangeColor(Color color, int materialIndex)
     {
         // Null ref protection

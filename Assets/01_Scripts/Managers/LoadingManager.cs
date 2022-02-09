@@ -4,11 +4,6 @@ public class LoadingManager : MonoBehaviour
 {
     [SerializeField] private int sceneToLoad;
 
-    void Start()
-    {
-        Application.targetFrameRate = 60;
-    }
-
     /// <summary> Loads scene with given index </summary>
     public static void LoadScene(int sceneIndex)
     {

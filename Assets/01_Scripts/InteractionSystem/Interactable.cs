@@ -146,23 +146,25 @@ public class Interactable : MonoBehaviour
     {
         EventTrigger eventTrigger = this.GetComponent<EventTrigger>();
 
-
         // Set up on pointer enter event
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerEnter;
+        EventTrigger.Entry entry = new EventTrigger.Entry{
+            eventID = EventTriggerType.PointerEnter
+        };
         entry.callback.AddListener((data) => { SetGazedAt(true); });
         eventTrigger.triggers.Add(entry);
 
 
         // Set up on pointer exit event
-        entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerExit;
+        entry = new EventTrigger.Entry{
+            eventID = EventTriggerType.PointerExit
+        };
         entry.callback.AddListener((data) => { SetGazedAt(false); });
         eventTrigger.triggers.Add(entry);
 
         // Set up pointer click event
-        entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerClick;
+        entry = new EventTrigger.Entry{
+            eventID = EventTriggerType.PointerClick
+        };
         entry.callback.AddListener((data) => { OnInteraction(); });
         eventTrigger.triggers.Add(entry);
     }

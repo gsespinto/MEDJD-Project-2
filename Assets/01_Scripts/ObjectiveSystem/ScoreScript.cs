@@ -32,7 +32,7 @@ public class ScoreScript : MonoBehaviour
         // Update visuals
         string info = "[" + currentScore + " / " + targetScore + "]";
         objectiveComponent.UpdateObjectiveInfo(objectiveIndex, info);
-        objectiveComponent.OnUpdateObjective(objectiveIndex);
+        objectiveComponent.OnRefreshObjective(objectiveIndex);
 
         // If score has reached its target value
         // Complete objective
@@ -54,7 +54,7 @@ public class ScoreScript : MonoBehaviour
         objectiveComponent.CompleteObjective(objectiveIndex);
     }
 
-    public void UpdateObjective(int index)
+    public void RefreshObjective(int index)
     {
         // Null ref protection
         if (!objectiveComponent)
@@ -63,6 +63,6 @@ public class ScoreScript : MonoBehaviour
             return;
         }
 
-        objectiveComponent.OnUpdateObjective(index);
+        objectiveComponent.OnRefreshObjective(index);
     }
 }

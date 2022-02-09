@@ -20,7 +20,7 @@ public class ObjectiveInfo
     {
         // Get narration component
         narrationComponent = GameObject.FindObjectOfType<NarrationComponent>();
-        ResetReminder();
+        RefreshTimer();
     }
 
     /// <summary> Is the objective completed </summary>
@@ -96,11 +96,11 @@ public class ObjectiveInfo
         // Play reminder narration
         narrationComponent.PlayNarration(reminder);
 
-        ResetReminder();
+        RefreshTimer();
     }
 
     /// <summary> Reset currentReminderTimer to original value </summary>
-    public void ResetReminder()
+    public void RefreshTimer()
     {
         currentReminderTimer = Random.Range(reminderTimerRange.x, reminderTimerRange.y);
     }

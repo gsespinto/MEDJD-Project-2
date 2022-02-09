@@ -11,6 +11,7 @@ public class NarrativeObjective : NarrationInteractable
     protected override void Start()
     {
         base.Start();
+
         objectiveComponent = GameObject.FindObjectOfType<ObjectiveComponent>();
     }
 
@@ -45,7 +46,7 @@ public class NarrativeObjective : NarrationInteractable
         base.OnInteraction();
 
         // Update narrative objective
-        objectiveComponent.OnUpdateObjective(objectiveIndex);
+        objectiveComponent.OnRefreshObjective(objectiveIndex);
         // Has queued clips
         hasQueuedClips = true;
 }

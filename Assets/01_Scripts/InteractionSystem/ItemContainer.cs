@@ -38,11 +38,11 @@ public class ItemContainer : MonoBehaviour
         currentItem = _item;
         giver = _giver;
 
-        UpdateItemIconVisibility();
+        UpdateItemIcon();
     }
 
     /// <summary> Hides item icon if there's no item being held, else shows it </summary>
-    void UpdateItemIconVisibility()
+    void UpdateItemIcon()
     {
         // Null ref protection
         if (!itemImage)
@@ -50,6 +50,7 @@ public class ItemContainer : MonoBehaviour
             return;
         }
 
+        // Update sprite of image according to current item
         foreach(FItemIcon icon in itemIcons)
         {
             if (icon.item != currentItem)
@@ -58,6 +59,7 @@ public class ItemContainer : MonoBehaviour
             itemImage.sprite = icon.icon;
         }
 
+        // Only show icon image if player is holding an item
         itemImage.gameObject.SetActive(currentItem != EItem.NONE);
     }
 }

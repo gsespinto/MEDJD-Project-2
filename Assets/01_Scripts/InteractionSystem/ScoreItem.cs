@@ -25,8 +25,6 @@ public class ScoreItem : ItemInteractable
         }
     }
 
-
-
     protected override bool ReceiveItem()
     {
         // Null ref protection
@@ -60,7 +58,7 @@ public class ScoreItem : ItemInteractable
         if (base.GiveItem())
         {
             // Update objective
-            scoreScript.UpdateObjective(objectiveIndex);
+            scoreScript.RefreshObjective(objectiveIndex);
             return true;
         }
 

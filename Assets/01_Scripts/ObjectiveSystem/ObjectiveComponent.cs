@@ -11,24 +11,25 @@ public class ObjectiveComponent : MonoBehaviour
     [SerializeField] private FNarration[] objectiveIndicators;
     bool finishedLevel = false;
 
-    public delegate void UpdateObjectiveCallback(int objetiveIndex);
-    public UpdateObjectiveCallback OnUpdateObjective;
-
-    void Awake()
-    {
-        OnUpdateObjective += UpdateObjective;
-    }
+    public delegate void RefreshObjectiveCallback(int objetiveIndex);
+    ///<summary> Event called whenever an objetive is refreshed </summary>
+    public RefreshObjectiveCallback OnRefreshObjective;
 
     void Start()
     {
+        // Call start function of each objetive
         foreach (ObjectiveInfo oi in objectives)
             oi.StartFunction();
+
+        // Add UpdatedObjective function to event
+        OnRefreshObjective += RefreshObjective;
     }
 
     private void Update()
     {
         TickObjectivesReminder();
     }
+
     public void CompleteObjective(int objectiveIndex)
     {
         // If there aren't any objectives
@@ -66,8 +67,8 @@ public class ObjectiveComponent : MonoBehaviour
         LoadingManager.LoadScene(nextScene);
     }
 
-    /// <summary> Updates given objective with given additional information and updates visuals </summary>
-    private void UpdateObjective(int objectiveIndex)
+    /// <summary> Resets reminder of given objective </summary>
+    private void RefreshObjective(int objectiveIndex)
     {
         if (objectives.Length <= 0)
             return;
@@ -75,9 +76,10 @@ public class ObjectiveComponent : MonoBehaviour
         // Clamp given index
         objectiveIndex = Mathf.Clamp(objectiveIndex, 0, objectives.Length - 1);
         // Change additional information
-        objectives[objectiveIndex].ResetReminder();
+        objectives[objectiveIndex].RefreshTimer();
     }
 
+    /// <summary> Updates given objective with given additional information and updates visuals </summary>
     public void UpdateObjectiveInfo(int objectiveIndex, string addedInformation)
     {
         if (objectives.Length <= 0)
@@ -88,6 +90,7 @@ public class ObjectiveComponent : MonoBehaviour
         objectives[objectiveIndex].SetAdditionalInformation(addedInformation);
     }
 
+    /// <summary> Calls TickReminder function of each objective </summary>
     void TickObjectivesReminder()
     {
         foreach (ObjectiveInfo oi in objectives)
