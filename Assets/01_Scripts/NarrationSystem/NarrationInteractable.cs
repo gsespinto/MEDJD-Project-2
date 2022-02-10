@@ -10,10 +10,10 @@ public class NarrationInteractable : Interactable
 
     protected override void Start()
     {
-        base.Start();
-
         // Get narration component ref
         narrationComponent = GameObject.FindObjectOfType<NarrationComponent>();
+
+        base.Start();
     }
 
     protected override void SetGazedAt(bool gazedAt)
@@ -67,10 +67,12 @@ public class NarrationInteractable : Interactable
         return base.CanInteract();
     }
 
-    public override void OnInteraction()
+    public override void Interact()
     {
         if (!CanInteract())
             return;
+
+        base.Interact();
 
         // Add the narrations to the queue
         foreach (FNarration n in narrations)
@@ -78,6 +80,5 @@ public class NarrationInteractable : Interactable
             narrationComponent.PlayNarrationOnce(n);
         }
 
-        base.OnInteraction();
     }
 }

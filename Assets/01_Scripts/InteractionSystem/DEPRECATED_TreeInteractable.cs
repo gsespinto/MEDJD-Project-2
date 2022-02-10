@@ -8,7 +8,7 @@ public class DEPRECATED_TreeInteractable : Interactable
     [SerializeField] private Object[] objsToDestroy;
     [SerializeField] private AudioClip[] shoutClips;
 
-    public override void OnInteraction()
+    public override void Interact()
     {
         if (!CanInteract())
             return;
@@ -20,6 +20,8 @@ public class DEPRECATED_TreeInteractable : Interactable
             Debug.LogWarning("Missing score script reference.", this);
             return;
         }
+
+        base.Interact();
         
         // Increase score
         scoreScript.ChangeScore(+1);
@@ -28,7 +30,6 @@ public class DEPRECATED_TreeInteractable : Interactable
         // Destroy objects
         DestroyObjects();
 
-        base.OnInteraction();
     }
 
     /// <summary> Plays random sfx from shout clips </summary>

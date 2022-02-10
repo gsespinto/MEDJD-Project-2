@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 2930981545930518535}
   - component: {fileID: 2567897737237046629}
   - component: {fileID: 963369526741695447}
+  - component: {fileID: 7649943968802744724}
+  - component: {fileID: 4089477495270702599}
+  - component: {fileID: 1934574369559973598}
+  - component: {fileID: 6123833676136764618}
   m_Layer: 0
   m_Name: Lily
   m_TagString: Untagged
@@ -68,23 +72,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73506c00ba35500409fa0e8d128f2219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 963369526741695447}
-  onEnterSFXs:
-  - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
-  onInteractionSFXs:
-  - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 0.5
   rechargeInteraction: 1
-  loadImage: {fileID: 8792240392966017800}
-  loadCanvas: {fileID: 4096697454436545572}
-  interactionVfxPrefab: {fileID: 8922192642532342204, guid: 5ae78de9a2b602e4e81567a8c5aa1c07,
-    type: 3}
-  vfxTarget: {fileID: 6021973781661857216}
   itemToGive: 3
   acceptedItems: 03000000
   destroyTimer: 0
-  objectsToDestroy: []
+  objectsToDestroy:
+  - {fileID: 2930981545930518535}
+  - {fileID: 7649943968802744724}
+  - {fileID: 4089477495270702599}
+  - {fileID: 6123833676136764618}
+  - {fileID: 1934574369559973598}
   destroyOneByOne: 0
   objectiveIndex: 1
   polenVFX: {fileID: 7294898857470445118}
@@ -201,6 +200,72 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7649943968802744724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435568568673837078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03dd8b1c13898c34fb13cd142c8eba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 2930981545930518535}
+  loadingImage: {fileID: 8792240392966017800}
+  loadingCanvas: {fileID: 4096697454436545572}
+--- !u!114 &4089477495270702599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435568568673837078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dccc426db99aa49a16c816e27236bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 2930981545930518535}
+  delegateType: 1
+  audioSource: {fileID: 963369526741695447}
+  sfxs:
+  - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
+--- !u!114 &1934574369559973598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435568568673837078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dccc426db99aa49a16c816e27236bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 2930981545930518535}
+  delegateType: 0
+  audioSource: {fileID: 963369526741695447}
+  sfxs:
+  - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
+--- !u!114 &6123833676136764618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435568568673837078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5273442bddec746bfc7998177d71d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 2930981545930518535}
+  delegateType: 0
+  vfxOrigin: {fileID: 6021973781661857216}
+  vfxPrefab: {fileID: 8922192642532342204, guid: 5ae78de9a2b602e4e81567a8c5aa1c07,
+    type: 3}
 --- !u!1 &7339860340222659237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,12 +1089,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9010453434291165018}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &4096697454436545572 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 5031060685118792574, guid: 259078fd90cdd1f449c190423370c884,
-    type: 3}
-  m_PrefabInstance: {fileID: 9010453434291165018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8792240392966017800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 508871184332031058, guid: 259078fd90cdd1f449c190423370c884,
@@ -1042,3 +1101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &4096697454436545572 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5031060685118792574, guid: 259078fd90cdd1f449c190423370c884,
+    type: 3}
+  m_PrefabInstance: {fileID: 9010453434291165018}
+  m_PrefabAsset: {fileID: 0}

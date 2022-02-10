@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyDelegates;
 using TMPro;
 
 public class ObjectiveComponent : MonoBehaviour
@@ -11,18 +12,21 @@ public class ObjectiveComponent : MonoBehaviour
     [SerializeField] private FNarration[] objectiveIndicators;
     bool finishedLevel = false;
 
-    public delegate void RefreshObjectiveCallback(int objetiveIndex);
+    
     ///<summary> Event called whenever an objetive is refreshed </summary>
-    public RefreshObjectiveCallback OnRefreshObjective;
+    public IntParamDelegate OnRefreshObjective;
+
+    void Awake()
+    {
+        // Add UpdatedObjective function to event
+        OnRefreshObjective += RefreshObjective;
+    }
 
     void Start()
     {
         // Call start function of each objetive
         foreach (ObjectiveInfo oi in objectives)
             oi.StartFunction();
-
-        // Add UpdatedObjective function to event
-        OnRefreshObjective += RefreshObjective;
     }
 
     private void Update()

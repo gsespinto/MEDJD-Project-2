@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[System.Serializable]
+﻿[System.Serializable]
 public enum EItem
 {
     NONE,
@@ -10,3 +6,12 @@ public enum EItem
     RED_POLEN,
     BLUE_POLEN,
 }
+
+[System.Serializable]
+public enum EInteractionDelegate
+{
+    ON_INTERACTION,
+    ON_GAZED_AT_TRUE,
+    ON_GAZED_AT_FALSE,
+}
+

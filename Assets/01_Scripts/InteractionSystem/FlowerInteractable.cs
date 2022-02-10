@@ -26,10 +26,17 @@ public class FlowerInteractable : ScoreItem
         ChangeColor(beforeColor, materialToChangeIndex);
     }
 
-    protected void FixedUpdate()
+    protected override void AssignDelegates()
     {
-        HandlePolenVFX();
-        HandleArrow();
+        if (!containerScript)
+        {
+            Debug.LogWarning("Missing container script reference.", this);
+            return;
+        }
+
+        containerScript.OnSetItem += HandleArrow;
+        containerScript.OnSetItem += HandlePolenVFX;
+        base.AssignDelegates();
     }
 
     /// <summary> Handles flower's arrow visibility </summary>
@@ -43,18 +50,12 @@ public class FlowerInteractable : ScoreItem
         // Show arrow
         if (containerScript.CurrentItem != EItem.NONE && containerScript.Giver != this)
         {
-            if (arrow.gameObject.activeInHierarchy)
-                return;
-
             arrow.gameObject.SetActive(true);
             return;
         }
 
         // If the player hasn't got an item or this is the giver
         // Hide arrow
-        if (!arrow.gameObject.activeInHierarchy)
-            return;
-
         arrow.gameObject.SetActive(false);
     }
 
@@ -69,18 +70,12 @@ public class FlowerInteractable : ScoreItem
         // Play polen vfx
         if (containerScript.CurrentItem == EItem.NONE)
         {
-            if (polenVFX.isPlaying)
-                return;
-
             polenVFX.Play(); ;
             return;
         }
 
         // If the player has an item
         // Stop polen VFX
-        if (polenVFX.isStopped)
-            return;
-
         polenVFX.Stop();
     }
 
@@ -90,7 +85,7 @@ public class FlowerInteractable : ScoreItem
         if (!containerScript)
         {
             Debug.LogWarning("Missing container script reference.", this);
-            SetGazedAt(false);
+            base.SetGazedAt(false);
             return;
         }
 
@@ -134,7 +129,7 @@ public class FlowerInteractable : ScoreItem
 
         // Has the interaction loaded?
         // Does the player have an item?
-        return currentInteractionLoadTime <= 0 && itemCondition;
+        return base.CanInteract() && itemCondition;
     }
 
     /// <summary> Attempts to receive item from container script </summary>
@@ -157,7 +152,7 @@ public class FlowerInteractable : ScoreItem
             Destroy(arrow);
         ChangeColor(afterColor, materialToChangeIndex);
 
-        DestroyScript();
+        DestroyObjects();
         return true;
     }
 
@@ -180,13 +175,13 @@ public class FlowerInteractable : ScoreItem
         if (polenVFX)
             Destroy(polenVFX);
 
-        DestroyScript();
+        DestroyObjects();
         return true;
     }
 
-    public override void OnInteraction()
+    public override void Interact()
     {
-        base.OnInteraction();
+        base.Interact();
         SetGazedAt(true);
     }
 
@@ -228,13 +223,13 @@ public class FlowerInteractable : ScoreItem
             arrow.color = afterColor;
     }
 
-    /// <summary> If this flower has given and received polen, destroy script </summary>
-    void DestroyScript()
+    /// <summary> If this flower has given and received polen, destroy objects </summary>
+    protected override void DestroyObjects()
     {
         if (!hasGivenPolen || !hasReceivedPolen)
             return;
 
-        Destroy(this);
+        base.DestroyObjects();
     }
 }
 

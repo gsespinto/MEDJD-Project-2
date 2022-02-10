@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 3948199667079975886}
   - component: {fileID: 3948199667079975885}
   - component: {fileID: 3948199667079975884}
+  - component: {fileID: 3807203047431595283}
+  - component: {fileID: 2065636820551528622}
+  - component: {fileID: 3210575856023911638}
   - component: {fileID: 3948199667079975887}
   m_Layer: 0
   m_Name: DeforestedArea
@@ -73,18 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5930374954a19e64588567bea8e7d73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 3948199667079975887}
-  onEnterSFXs:
-  - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
-  onInteractionSFXs:
-  - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
   setupEventTriggers: 1
   interactionLoadTime: 1
   rechargeInteraction: 0
-  loadImage: {fileID: 3586287010031976881}
-  loadCanvas: {fileID: 8294286516058236573}
-  interactionVfxPrefab: {fileID: 0}
-  vfxTarget: {fileID: 0}
   narrations:
   - clip: {fileID: 8300000, guid: 461093610bf1d8b4ebfee48d5822727e, type: 3}
     caption: What happened is, a lot of trees are being cut down,
@@ -125,6 +119,55 @@ MonoBehaviour:
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
   objectiveIndex: 1
   newDescription: Finish listening.
+--- !u!114 &3807203047431595283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948199667079975880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03dd8b1c13898c34fb13cd142c8eba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3948199667079975884}
+  loadingImage: {fileID: 3586287010031976881}
+  loadingCanvas: {fileID: 8294286516058236573}
+--- !u!114 &2065636820551528622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948199667079975880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dccc426db99aa49a16c816e27236bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3948199667079975884}
+  delegateType: 1
+  audioSource: {fileID: 3948199667079975887}
+  sfxs:
+  - {fileID: 8300000, guid: 9481a01add5b4cb41b9e761e9654cb16, type: 3}
+--- !u!114 &3210575856023911638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948199667079975880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dccc426db99aa49a16c816e27236bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3948199667079975884}
+  delegateType: 0
+  audioSource: {fileID: 3948199667079975887}
+  sfxs:
+  - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
 --- !u!82 &3948199667079975887
 AudioSource:
   m_ObjectHideFlags: 0

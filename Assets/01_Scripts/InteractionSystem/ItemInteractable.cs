@@ -24,8 +24,20 @@ public class ItemInteractable : Interactable
     {
         // Get ContainerScript ref
         containerScript = GameObject.FindObjectOfType<ItemContainer>();
+        AssignDelegates();
 
         base.Start();
+    }
+
+    protected virtual void AssignDelegates()
+    {
+        if (!containerScript)
+        {
+            Debug.LogWarning("Missing container script reference.", this);
+            return;
+        }
+
+        containerScript.OnSetItem += RechargeInteraction;
     }
 
     protected override void SetGazedAt(bool gazedAt)
@@ -89,13 +101,15 @@ public class ItemInteractable : Interactable
 
         // Has the interaction loaded?
         // Does the player have an item?
-        return currentInteractionLoadTime <= 0 && itemCondition;
+        return base.CanInteract() && itemCondition;
     }
 
-    public override void OnInteraction()
+    public override void Interact()
     {
         if (!CanInteract())
             return;
+
+        base.Interact();
 
         // If the player holds an item
         // Then try to receive it
@@ -108,7 +122,6 @@ public class ItemInteractable : Interactable
         else
             GiveItem();
 
-        base.OnInteraction();
 
         // If there's objects to destroy
         // Destroy them after first interaction
@@ -129,7 +142,15 @@ public class ItemInteractable : Interactable
         }
 
         foreach (Object obj in objectsToDestroy)
+        {
+            if (obj == this)
+            {
+                Destroy(obj, destroyTimer + 0.1f);
+                continue;
+            }
+
             Destroy(obj, destroyTimer);
+        }
     }
 
     /// <summary> If there's an item to give, gives it to the item container </summary>

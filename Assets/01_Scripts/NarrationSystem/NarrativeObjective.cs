@@ -38,12 +38,12 @@ public class NarrativeObjective : NarrationInteractable
         return base.CanInteract();
     }
 
-    public override void OnInteraction()
+    public override void Interact()
     {
         if (!CanInteract())
             return;
 
-        base.OnInteraction();
+        base.Interact();
 
         // Update narrative objective
         objectiveComponent.OnRefreshObjective(objectiveIndex);

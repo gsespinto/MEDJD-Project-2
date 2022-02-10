@@ -6,10 +6,12 @@ public class FlowerContainer : ItemContainer
 {
     private FlowerColors flowerColors;
 
-    private void Start()
+    protected override void Start()
     {
         // Get FlowerColors component
         flowerColors = this.GetComponent<FlowerColors>();
+
+        base.Start();
     }
 
     /// <summary> Sets current item being held by container and the object that gave it </summary>

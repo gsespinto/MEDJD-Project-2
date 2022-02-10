@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MyDelegates;
 
 public class ItemContainer : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ItemContainer : MonoBehaviour
     [SerializeField] protected Image itemImage;
     [SerializeField] private FItemIcon[] itemIcons;
 
-    private void Awake()
+    public NoParamsDelegate OnSetItem;
+
+    protected virtual void Start()
     {
         SetItem(EItem.NONE, null);
     }
@@ -39,6 +42,7 @@ public class ItemContainer : MonoBehaviour
         giver = _giver;
 
         UpdateItemIcon();
+        OnSetItem?.Invoke();
     }
 
     /// <summary> Hides item icon if there's no item being held, else shows it </summary>
