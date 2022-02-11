@@ -410,8 +410,9 @@ MonoBehaviour:
   destroyTimer: 0
   objectsToDestroy:
   - {fileID: 2485429650757531024}
-  - {fileID: 2804728395571834883}
   - {fileID: 5694300794314852514}
+  - {fileID: 2804728395571834883}
+  - {fileID: 3544308605148414161}
   - {fileID: 5107046246649578802}
   destroyOneByOne: 0
   objectiveIndex: 1

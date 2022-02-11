@@ -230,13 +230,14 @@ MonoBehaviour:
   rechargeInteraction: 0
   itemToGive: 1
   acceptedItems: 
-  destroyTimer: 2
+  destroyTimer: 0
   objectsToDestroy:
   - {fileID: 5191063073584241396}
   - {fileID: 8859365884705704682}
   - {fileID: 325822992342392311}
   - {fileID: 760222467973429664}
   - {fileID: 2417475419483991670}
+  - {fileID: 8155094108567398177}
   - {fileID: 4184225575356531618}
   destroyOneByOne: 0
   objectiveIndex: 0

@@ -10,8 +10,12 @@ public class InteractableDestroyObjects : InteractableComponent
 
     protected override void Effect()
     {
+        // Destroy each object in objects to destroy
         foreach (Object obj in objectsToDestroy)
         {
+            // if the interactable is to be destroyed
+            // add an extra time to be the last object being destroyed 
+            // because of dependencies
             if (obj == interactable)
             {
                 Destroy(obj, destroyTimer + 0.1f);

@@ -5,7 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Interactable))]
 public class InteractableComponent : MonoBehaviour
 {
+    /// <summary> Interactable to add the effect to </summary>
     [SerializeField] protected Interactable interactable;
+    /// <summary> Delegate to assign the effect to </summary>
     [SerializeField] private EInteractionDelegate delegateType;
 
     // Start is called before the first frame update
@@ -14,18 +16,24 @@ public class InteractableComponent : MonoBehaviour
         AssignDelegate();
     }
 
+    /// <summary> Assings component's effect to correspondent interactable delegate </summary>
     void AssignDelegate()
     {
+        // Get interactable ref if not set yet
         if (!interactable)
         {
             interactable = this.GetComponent<Interactable>();
+
+            // Null ref protection
             if (!interactable)
             {
                 Debug.LogWarning("Couldn't find valid reference of Interactable script.", this);
+                Destroy(this);
                 return;
             }
         }
 
+        // Add effect to correspondent delegate
         switch (delegateType)
         {
             case EInteractionDelegate.ON_INTERACTION:
@@ -43,6 +51,7 @@ public class InteractableComponent : MonoBehaviour
         }
     }
 
+    /// <summary> Execute component's effect when pointer enters the interactable </summary>
     void OnGazedAtTrue(bool gazedAt)
     {
         if (!gazedAt)
@@ -51,6 +60,7 @@ public class InteractableComponent : MonoBehaviour
         Effect();
     }
 
+    /// <summary> Execute component's effect when pointer leaves the interactable </summary>
     void OnGazedAtFalse(bool gazedAt)
     {
         if (gazedAt)
@@ -59,6 +69,7 @@ public class InteractableComponent : MonoBehaviour
         Effect();
     }
 
+    /// <summary> Component's effect </summary>
     protected virtual void Effect()
     {
         return;

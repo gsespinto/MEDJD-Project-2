@@ -18,8 +18,11 @@ public class Interactable : MonoBehaviour
     [SerializeField] private bool rechargeInteraction = false; // Is the load time supposed to reset after interaction?
   #endregion
 
+    /// <summary> Called when the object is interacted with </summary>
     public NoParamsDelegate OnInteraction;
+    /// <summary> Called when the object is gazed upon or finished being gazed </summary>
     public BoolParamDelegate OnGazedAt;
+    /// <summary> Called when the interaction with the object is loading </summary>
     public NoParamsDelegate OnLoadingInteraction;
 
     private void Awake()
@@ -31,7 +34,7 @@ public class Interactable : MonoBehaviour
     protected virtual void Start()
     {
         SetGazedAt(false);
-        RechargeInteraction();
+        currentInteractionLoadTime = interactionLoadTime;
     }
 
     protected virtual void Update()
@@ -44,6 +47,7 @@ public class Interactable : MonoBehaviour
     {
         // Engages interaction loading
         isLoadingInteraction = gazedAt;
+        // Gazed at callback
         OnGazedAt?.Invoke(gazedAt);
     }
 
@@ -53,6 +57,7 @@ public class Interactable : MonoBehaviour
         if (!CanInteract())
             return;
 
+        // Interaction callback
         OnInteraction?.Invoke();
         RechargeInteraction();
     }
@@ -68,6 +73,7 @@ public class Interactable : MonoBehaviour
 
         // Decrease interaction load time
         currentInteractionLoadTime -= Time.deltaTime;
+        // Loading callback
         OnLoadingInteraction?.Invoke();
     }
 
@@ -104,18 +110,22 @@ public class Interactable : MonoBehaviour
         eventTrigger.triggers.Add(entry);
     }
 
+    /// <summary> Returns ration being the current loading time and its default value </summary>
     public float GetLoadingRatio()
     {
         return currentInteractionLoadTime / interactionLoadTime;
     }
 
+    /// <summary> Recharge load time if it's supposed to </summary>
     protected void RechargeInteraction()
     {
-        // Recharge load time if it's supposed to
-        if (rechargeInteraction)
-        {
-            currentInteractionLoadTime = interactionLoadTime;
-            isLoadingInteraction = false;
-        }
+        // If it's not supposed to recharge
+        // Do nothing
+        if (!rechargeInteraction)
+            return;
+
+        // Reset loading values
+        currentInteractionLoadTime = interactionLoadTime;
+        isLoadingInteraction = false;
     }
 }
