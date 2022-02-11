@@ -15,11 +15,6 @@ public class ItemInteractable : Interactable
     [Header("Receiving")]
     [SerializeField] protected List<EItem> acceptedItems = new List<EItem>();
 
-    [Header("Destroying")]
-    [SerializeField] private float destroyTimer = 0; // Seconds after which to destroy the objects in the list
-    [SerializeField] private List<Object> objectsToDestroy = new List<Object>(); // List of objects to destroy upon interaction
-    [SerializeField] private bool destroyOneByOne = false; // Should destroy objects one by one
-
     protected override void Start()
     {
         // Get ContainerScript ref
@@ -121,36 +116,6 @@ public class ItemInteractable : Interactable
         // Then try to give it
         else
             GiveItem();
-
-
-        // If there's objects to destroy
-        // Destroy them after first interaction
-        DestroyObjects();
-    }
-
-    /// <summary> Destroy object of list to destroy after set time </summary>
-    protected virtual void DestroyObjects()
-    {
-        if (objectsToDestroy.Count <= 0)
-            return;
-
-        if (destroyOneByOne)
-        {
-            Destroy(objectsToDestroy[0], destroyTimer);
-            objectsToDestroy.RemoveAt(0);
-            return;
-        }
-
-        foreach (Object obj in objectsToDestroy)
-        {
-            if (obj == this)
-            {
-                Destroy(obj, destroyTimer + 0.1f);
-                continue;
-            }
-
-            Destroy(obj, destroyTimer);
-        }
     }
 
     /// <summary> If there's an item to give, gives it to the item container </summary>

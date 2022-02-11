@@ -12,9 +12,10 @@ public class ScoreScript : MonoBehaviour
 
     void Start()
     {
+
         objectiveComponent = this.GetComponent<ObjectiveComponent>();
         // Sets initial visual values
-        ChangeScore(0);
+        UpdateVisuals();
     }
 
     /// <summary> Change score by given amount, if it has reached target score, load next scene </summary>
@@ -29,15 +30,21 @@ public class ScoreScript : MonoBehaviour
 
         // Change score by given amount
         currentScore += amount;
-        // Update visuals
-        string info = "[" + currentScore + " / " + targetScore + "]";
-        objectiveComponent.UpdateObjectiveInfo(objectiveIndex, info);
-        objectiveComponent.OnRefreshObjective(objectiveIndex);
+
+        UpdateVisuals();
+        RefreshObjective(objectiveIndex);
 
         // If score has reached its target value
         // Complete objective
         if (currentScore >= targetScore)
             CompleteObjective();
+    }
+
+    /// <summary> Update objective's additional information to show current score </summary>
+    void UpdateVisuals()
+    {
+        string info = "[" + currentScore + " / " + targetScore + "]";
+        objectiveComponent.UpdateObjectiveInfo(objectiveIndex, info);
     }
 
     /// <summary> If the narration component has finished playing the conversation clips, complete the objective </summary>
@@ -63,6 +70,6 @@ public class ScoreScript : MonoBehaviour
             return;
         }
 
-        objectiveComponent.OnRefreshObjective(index);
+        objectiveComponent.OnRefreshObjective?.Invoke(index);
     }
 }

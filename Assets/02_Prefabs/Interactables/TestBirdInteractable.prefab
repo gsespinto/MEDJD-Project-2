@@ -233,6 +233,10 @@ GameObject:
   - component: {fileID: 2804728395571834883}
   - component: {fileID: 3544308605148414161}
   - component: {fileID: 5694300794314852514}
+  - component: {fileID: 5327113881750601440}
+  - component: {fileID: 8535658291189628890}
+  - component: {fileID: 3039969383712659222}
+  - component: {fileID: 481585017153124277}
   m_Layer: 0
   m_Name: TestBirdInteractable
   m_TagString: Untagged
@@ -407,14 +411,6 @@ MonoBehaviour:
   rechargeInteraction: 0
   itemToGive: 0
   acceptedItems: 01000000
-  destroyTimer: 0
-  objectsToDestroy:
-  - {fileID: 2485429650757531024}
-  - {fileID: 5694300794314852514}
-  - {fileID: 2804728395571834883}
-  - {fileID: 3544308605148414161}
-  - {fileID: 5107046246649578802}
-  destroyOneByOne: 0
   objectiveIndex: 1
 --- !u!114 &2485429650757531024
 MonoBehaviour:
@@ -482,6 +478,84 @@ MonoBehaviour:
   vfxOrigin: {fileID: 5958014216536013102}
   vfxPrefab: {fileID: 8922192642532342204, guid: 0361e1733c65b53429dc92124e58773e,
     type: 3}
+--- !u!114 &5327113881750601440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38b1178fe322df4b81887f3e47f64d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 5107046246649578802}
+  delegateType: 0
+  destroyTimer: 2
+  objectsToDestroy:
+  - {fileID: 8144443259667496596}
+  destroyOneByOne: 0
+--- !u!114 &8535658291189628890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38b1178fe322df4b81887f3e47f64d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 5107046246649578802}
+  delegateType: 0
+  destroyTimer: 0.05
+  objectsToDestroy:
+  - {fileID: 5107046246649578802}
+  - {fileID: 8535658291189628890}
+  - {fileID: 5327113881750601440}
+  - {fileID: 3039969383712659222}
+  - {fileID: 5694300794314852514}
+  - {fileID: 2804728395571834883}
+  - {fileID: 3544308605148414161}
+  - {fileID: 2485429650757531024}
+  destroyOneByOne: 0
+--- !u!114 &3039969383712659222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44bc3151b34874469583fd4b76a2091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 5107046246649578802}
+  delegateType: 0
+  animator: {fileID: 481585017153124277}
+  trigger: Fly
+--- !u!95 &481585017153124277
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144443259667496596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5ab2831807274f418b36d9ada848069, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &942589039031650633
 PrefabInstance:
   m_ObjectHideFlags: 0

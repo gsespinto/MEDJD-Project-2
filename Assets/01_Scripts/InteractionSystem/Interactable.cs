@@ -34,7 +34,7 @@ public class Interactable : MonoBehaviour
     protected virtual void Start()
     {
         SetGazedAt(false);
-        currentInteractionLoadTime = interactionLoadTime;
+        RechargeInteraction();
     }
 
     protected virtual void Update()
@@ -59,7 +59,9 @@ public class Interactable : MonoBehaviour
 
         // Interaction callback
         OnInteraction?.Invoke();
-        RechargeInteraction();
+
+        if (rechargeInteraction)
+            RechargeInteraction();
     }
 
     /// <summary> If the interaction is loading, decreases load time </summary>
@@ -116,14 +118,9 @@ public class Interactable : MonoBehaviour
         return currentInteractionLoadTime / interactionLoadTime;
     }
 
-    /// <summary> Recharge load time if it's supposed to </summary>
+    /// <summary> Recharge load time </summary>
     protected void RechargeInteraction()
     {
-        // If it's not supposed to recharge
-        // Do nothing
-        if (!rechargeInteraction)
-            return;
-
         // Reset loading values
         currentInteractionLoadTime = interactionLoadTime;
         isLoadingInteraction = false;

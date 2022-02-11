@@ -46,7 +46,7 @@ public class NarrativeObjective : NarrationInteractable
         base.Interact();
 
         // Update narrative objective
-        objectiveComponent.OnRefreshObjective(objectiveIndex);
+        objectiveComponent.OnRefreshObjective?.Invoke(objectiveIndex);
         // Has queued clips
         hasQueuedClips = true;
 }

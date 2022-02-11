@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 760222467973429664}
   - component: {fileID: 8155094108567398177}
   - component: {fileID: 2417475419483991670}
+  - component: {fileID: 4213567069306088009}
   m_Layer: 0
   m_Name: oakTree
   m_TagString: Untagged
@@ -230,16 +231,6 @@ MonoBehaviour:
   rechargeInteraction: 0
   itemToGive: 1
   acceptedItems: 
-  destroyTimer: 0
-  objectsToDestroy:
-  - {fileID: 5191063073584241396}
-  - {fileID: 8859365884705704682}
-  - {fileID: 325822992342392311}
-  - {fileID: 760222467973429664}
-  - {fileID: 2417475419483991670}
-  - {fileID: 8155094108567398177}
-  - {fileID: 4184225575356531618}
-  destroyOneByOne: 0
   objectiveIndex: 0
 --- !u!114 &325822992342392311
 MonoBehaviour:
@@ -307,6 +298,30 @@ MonoBehaviour:
   vfxOrigin: {fileID: 5189141231517222246}
   vfxPrefab: {fileID: 8922192642532342204, guid: 46ef0d25aa0dba5459454d33d992dfb4,
     type: 3}
+--- !u!114 &4213567069306088009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5221835126621192258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38b1178fe322df4b81887f3e47f64d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 4184225575356531618}
+  delegateType: 0
+  destroyTimer: 0.05
+  objectsToDestroy:
+  - {fileID: 5191063073584241396}
+  - {fileID: 325822992342392311}
+  - {fileID: 760222467973429664}
+  - {fileID: 8155094108567398177}
+  - {fileID: 2417475419483991670}
+  - {fileID: 4184225575356531618}
+  - {fileID: 4213567069306088009}
+  destroyOneByOne: 0
 --- !u!1001 &2535398898652986974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,12 +546,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259078fd90cdd1f449c190423370c884, type: 3}
---- !u!1 &8859365884705704682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5039599124923287345, guid: 259078fd90cdd1f449c190423370c884,
-    type: 3}
-  m_PrefabInstance: {fileID: 4540344074631450075}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4013422261964147518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 626001077483964133, guid: 259078fd90cdd1f449c190423370c884,

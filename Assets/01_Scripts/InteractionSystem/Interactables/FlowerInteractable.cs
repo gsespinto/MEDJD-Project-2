@@ -151,8 +151,6 @@ public class FlowerInteractable : ScoreItem
         if (arrow)
             Destroy(arrow);
         ChangeColor(afterColor, materialToChangeIndex);
-
-        DestroyObjects();
         return true;
     }
 
@@ -174,8 +172,6 @@ public class FlowerInteractable : ScoreItem
         hasGivenPolen = true;
         if (polenVFX)
             Destroy(polenVFX);
-
-        DestroyObjects();
         return true;
     }
 
@@ -221,15 +217,6 @@ public class FlowerInteractable : ScoreItem
         afterColor = flowerColors.GetAfterColor(itemToGive);
         if (arrow)
             arrow.color = afterColor;
-    }
-
-    /// <summary> If this flower has given and received polen, destroy objects </summary>
-    protected override void DestroyObjects()
-    {
-        if (!hasGivenPolen || !hasReceivedPolen)
-            return;
-
-        base.DestroyObjects();
     }
 }
 

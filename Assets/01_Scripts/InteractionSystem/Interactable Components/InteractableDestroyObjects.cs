@@ -5,11 +5,22 @@ using UnityEngine;
 public class InteractableDestroyObjects : InteractableComponent
 {
     [Space(10)]
-    [SerializeField, Min(0.1f)] float destroyTimer;
-    [SerializeField] private Object[] objectsToDestroy;
+    [SerializeField, Min(0.05f)] float destroyTimer;
+    [SerializeField] private List<Object> objectsToDestroy;
+    [SerializeField] private bool destroyOneByOne;
 
     protected override void Effect()
     {
+        if (objectsToDestroy.Count <= 0)
+            return;
+
+        if (destroyOneByOne)
+        {
+            Destroy(objectsToDestroy[0], destroyTimer);
+            objectsToDestroy.RemoveAt(0);
+            return;
+        }
+
         // Destroy each object in objects to destroy
         foreach (Object obj in objectsToDestroy)
         {
