@@ -24,14 +24,18 @@ public class ItemInteractable : Interactable
         base.Start();
     }
 
+    /// <summary> Assigns functions to item container events </summary>
     protected virtual void AssignDelegates()
     {
+        // Null ref protection
         if (!containerScript)
         {
             Debug.LogWarning("Missing container script reference.", this);
             return;
         }
 
+        // Whenever the player picks up an item
+        // Reset interaction load time
         containerScript.OnSetItem += RechargeInteraction;
     }
 

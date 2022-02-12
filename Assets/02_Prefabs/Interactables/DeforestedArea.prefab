@@ -80,41 +80,85 @@ MonoBehaviour:
   interactionLoadTime: 1
   rechargeInteraction: 0
   narrations:
-  - clip: {fileID: 8300000, guid: 461093610bf1d8b4ebfee48d5822727e, type: 3}
-    caption: What happened is, a lot of trees are being cut down,
-    sourceIndex: 0
+  - clip: {fileID: 8300000, guid: 16f47e2f6bae0c74e80ab1e15ad9e488, type: 3}
+    caption: Imagine that you can live anywhere you would like,
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 089b667e3cb9e69408e5c1eefe60a42f, type: 3}
-    caption: so they don't have anywhere to live anymore.
-    sourceIndex: 0
+  - clip: {fileID: 8300000, guid: 19e90b58f8653b34dadb3463b2c5a21f, type: 3}
+    caption: any tree you like...
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 321e9916775f9c4449bf9c8c73deb64c, type: 3}
-    caption: Unfortunately deforestation is causing this, and it is affecting not
-      just the birds.
+  - clip: {fileID: 8300000, guid: a5988b30180c9bd499619f09ba335bba, type: 3}
+    caption: Anyone?
     sourceIndex: 0
+    owner: Child
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: f71da8b06f3931a428e3b0c805ffa019, type: 3}
+    caption: 'Yes, anyone, but there are not as many trees like before. '
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 3ee14043871d1db40bad27939c5c4b11, type: 3}
-    caption: A lot of animals are losing space too, and some of them may cease to
-      exist.
+  - clip: {fileID: 8300000, guid: 198c585bc6b9783419de42e84996b306, type: 3}
+    caption: Why?
     sourceIndex: 0
+    owner: Child
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: d2714e377eefa4a4b97ba2cee5ea0225, type: 3}
+    caption: 'Listen, can you see an area with trucks and stacked logs? '
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: c7c66462fb2d16c459dbb654aaf663a6, type: 3}
-    caption: Great part of the pollution in the cities are caused because of the deforestation.
+  - clip: {fileID: 8300000, guid: ae01686b215a21b48aff79fc7bcf7290, type: 3}
+    caption: Yes, mommy!
     sourceIndex: 0
+    owner: Child
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: 0809023e524d5b242b272c6f3bd3bf7d, type: 3}
+    caption: So, this is what is causing the lack of trees.
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: ad52bd2d5890930408ad9e8f5cead884, type: 3}
-    caption: We have fewer trees to clean the air.
-    sourceIndex: 0
+  - clip: {fileID: 8300000, guid: 3ee3aeca4a670434e9386ad1c3984639, type: 3}
+    caption: Unfortunately, the trees are being cut down for money and more space
+      for farms.
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 93baca66aea85984880a7a252c49da68, type: 3}
-    caption: And a lot of fires happen too...
+  - clip: {fileID: 8300000, guid: 4b54e515234a05b4d95b5530faa5b891, type: 3}
+    caption: That's why the birds lose their house?
     sourceIndex: 0
+    owner: Child
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: dcd21aa9553c8644cbf30b37016bbacc, type: 3}
+    caption: Not just the birds...
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 90ec56ce0a85b4a40a04f42fecff1827, type: 3}
+    caption: In one of those trees could have a hive, you know?
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 4f06ce7bc5ad5004f8c08fae6e4a7e06, type: 3}
+    caption: Even the bees lose their house?
+    sourceIndex: 1
+    owner: Child
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: b5ced56b850d2d8498ef684572898c90, type: 3}
+    caption: Yes, I'll tell you an interesting fact about the bees...
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: f60cd0f5a36ce984697e49eee74369c8, type: 3}
+    caption: But for now, imagine being one of them...
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: f99d4abf0e8fd9046bba53274b6830af, type: 3}
+    caption: Imagine being a bee...
+    sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
   objectiveIndex: 1

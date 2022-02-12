@@ -24,6 +24,9 @@ public class FlowerInteractable : ScoreItem
 
         GetColors();
         ChangeColor(beforeColor, materialToChangeIndex);
+
+        HandleArrow();
+        HandlePolenVFX();
     }
 
     protected override void AssignDelegates()

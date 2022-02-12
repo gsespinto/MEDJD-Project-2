@@ -54,12 +54,16 @@ public class Interactable : MonoBehaviour
     /// <summary> Called when the player interacts with this object </summary>
     public virtual void Interact()
     {
+        // If hasn't met interaction conditions
+        // Do nothing
         if (!CanInteract())
             return;
 
         // Interaction callback
         OnInteraction?.Invoke();
 
+        // If it's supposed to
+        // Recharge interaction load time
         if (rechargeInteraction)
             RechargeInteraction();
     }

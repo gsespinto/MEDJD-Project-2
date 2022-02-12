@@ -144,6 +144,8 @@ GameObject:
   - component: {fileID: 3222972409379775056}
   - component: {fileID: 6005650828504479021}
   - component: {fileID: 7774939344627537839}
+  - component: {fileID: 5545468215755739631}
+  - component: {fileID: 1035663077}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -206,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrationSources:
+  - {fileID: 5545468215755739631}
   - {fileID: 2649991135431188836}
   sfxSource: {fileID: 3222972409379775056}
   captionText: {fileID: 3445308661813332830}
@@ -223,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveIndex: 0
-  targetScore: 10
+  targetScore: 2
 --- !u!82 &2649991135431188836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -238,7 +241,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.97
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -247,7 +250,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.25
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -437,19 +440,19 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: e382cf000e750544a8af1ed7fd35d60a, type: 3}
       caption: This band leader should scouts for fruit from the trees and delivers
         it to nests.
-      sourceIndex: 0
+      sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-    reminderTimerRange: {x: 10, y: 20}
+    reminderTimerRange: {x: 30, y: 60}
   - informationText: {fileID: 0}
     additionalInformation: 
     reminder:
       clip: {fileID: 8300000, guid: e3bc4259cc75239478b0bd29877560f2, type: 3}
       caption: There are so many unflorested areas. I would like to get a closer look.
-      sourceIndex: 0
+      sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-    reminderTimerRange: {x: 30, y: 40}
+    reminderTimerRange: {x: 50, y: 70}
   nextScene: 3
   objectiveRefreshTime: 1
   objectiveIndicators: []
@@ -471,6 +474,163 @@ MonoBehaviour:
     icon: {fileID: 0}
   - item: 1
     icon: {fileID: 21300000, guid: 243bf2eae9dd7b545965b9aa98df13a6, type: 3}
+--- !u!82 &5545468215755739631
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628702931189246823}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6479627447736213019, guid: c15d2e458c5478d4c90861d68d8eb9b4,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0.25
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1035663077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628702931189246823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2965f452b1ba64cb1c8ca9e1c70731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveIndex: 0
+  tutorialVisuals:
+  - objects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - objects:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &3621864116772195327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1416,7 @@ PrefabInstance:
     - target: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
       propertyPath: m_fontSize
-      value: 44.75
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}
@@ -1268,6 +1428,11 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c9d71b33bc72bb479abce2d3e47d93b, type: 3}
 --- !u!224 &5850651415015911662 stripped
@@ -1276,18 +1441,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5078437793261592370}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3445308661813332830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
-    type: 3}
-  m_PrefabInstance: {fileID: 5078437793261592370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6839480631976270473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1770067631237924283, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
@@ -1298,6 +1451,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3445308661813332830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5078437793261592370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7517276344339167193

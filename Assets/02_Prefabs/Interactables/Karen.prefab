@@ -64,7 +64,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 0.97
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -176,33 +176,48 @@ MonoBehaviour:
   interactionLoadTime: 0
   rechargeInteraction: 0
   narrations:
-  - clip: {fileID: 8300000, guid: bc33f26f71e2adc4b9e633d71037a9d6, type: 3}
-    caption: Mom, why are there not as many birds as in your photos here?
+  - clip: {fileID: 8300000, guid: 0a0ad09b33f8aed4bae7dd60ada5020d, type: 3}
+    caption: Mom, why can't we feed the birds from our tree house?
     sourceIndex: 0
     owner: Child
     ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
-  - clip: {fileID: 8300000, guid: c8e661b5e834ecd44acbc2e322dcb5d1, type: 3}
-    caption: Because they are flying away, honey.
+  - clip: {fileID: 8300000, guid: e283a755383049641bc16071054dab30, type: 3}
+    caption: Because it doesn't exist anymore, honey.
     sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 4a8573abd5f997f4ab0e3a73a41edaee, type: 3}
-    caption: But why? Don't they live here?
-    sourceIndex: 0
-    owner: Child
-    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
-  - clip: {fileID: 8300000, guid: a891c0f08dd76cd4ea290de33a10bf3b, type: 3}
-    caption: They are loosing their house.
+  - clip: {fileID: 8300000, guid: 3dd647f7a727a75449fcbbaf36baf033, type: 3}
+    caption: Unfortunatly, the tree was cut down.
     sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
-  - clip: {fileID: 8300000, guid: 09f1aeae4d3ed0042bc4009e8bf937d5, type: 3}
-    caption: Why?
+  - clip: {fileID: 8300000, guid: 6ef67aca82c5aff4fa1402e1fee08deb, type: 3}
+    caption: So... Our house was destroyed?
     sourceIndex: 0
     owner: Child
     ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
-  - clip: {fileID: 8300000, guid: 8251f45c33eea6841b9361361327af03, type: 3}
+  - clip: {fileID: 8300000, guid: 9d8e738724dab4e4c9aac8451d3f8e6e, type: 3}
+    caption: Not just ours, honey.
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: e4ce9f2db054b5a45a3bab6c133c3571, type: 3}
+    caption: But the houses of other animals too.
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: a28c852a08aa684459a21f50e66414a2, type: 3}
+    caption: How so?
+    sourceIndex: 0
+    owner: Mom
+    ownerColor: {r: 0.9716981, g: 0.637104, b: 0.8144102, a: 0}
+  - clip: {fileID: 8300000, guid: 4b24a00baa785f54aa9ddff65a71317f, type: 3}
     caption: I'll tell you...
+    sourceIndex: 1
+    owner: Mom
+    ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
+  - clip: {fileID: 8300000, guid: 27c2cfef2eff7044d9e0a13441186f57, type: 3}
+    caption: But first, imagine that you are a bird...
     sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}

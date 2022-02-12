@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 356049387132561688}
   - component: {fileID: 8633021934862396581}
   - component: {fileID: 6866706208611703383}
+  - component: {fileID: 2110478452934175681}
   - component: {fileID: 2649991135431188836}
   - component: {fileID: 3222972409379775056}
   - component: {fileID: 3940149243387435966}
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   narrationSources:
+  - {fileID: 2110478452934175681}
   - {fileID: 2649991135431188836}
   sfxSource: {fileID: 3222972409379775056}
   captionText: {fileID: 3445308661813332830}
@@ -373,6 +375,103 @@ MonoBehaviour:
   - flower: 3
     beforeColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0.5882353}
     afterColor: {r: 1, g: 1, b: 1, a: 0.5882353}
+--- !u!82 &2110478452934175681
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2628702931189246823}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6479627447736213019, guid: c15d2e458c5478d4c90861d68d8eb9b4,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0.25
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &2649991135431188836
 AudioSource:
   m_ObjectHideFlags: 0
@@ -387,7 +486,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.97
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -396,7 +495,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.25
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -585,7 +684,7 @@ MonoBehaviour:
     reminder:
       clip: {fileID: 8300000, guid: 86f9f89822a2b8947a72e576d5b04571, type: 3}
       caption: Bees take pollen from flowers to their hives to make honey.
-      sourceIndex: 0
+      sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
     reminderTimerRange: {x: 30, y: 60}
@@ -594,10 +693,19 @@ MonoBehaviour:
     reminder:
       clip: {fileID: 8300000, guid: 6ce96ae3c9dd75b4eb071683718daa53, type: 3}
       caption: Bees take pollen from matching flowers to polonize them.
-      sourceIndex: 0
+      sourceIndex: 1
       owner: Mom
       ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
     reminderTimerRange: {x: 25, y: 45}
+  - informationText: {fileID: 0}
+    additionalInformation: 
+    reminder:
+      clip: {fileID: 0}
+      caption: 
+      sourceIndex: 0
+      owner: 
+      ownerColor: {r: 1, g: 1, b: 1, a: 0}
+    reminderTimerRange: {x: 1000, y: 1000}
   nextScene: 0
   objectiveRefreshTime: 1
   objectiveIndicators: []
@@ -2283,6 +2391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613913227465020524, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7931779601184644962, guid: 2c9d71b33bc72bb479abce2d3e47d93b,
         type: 3}

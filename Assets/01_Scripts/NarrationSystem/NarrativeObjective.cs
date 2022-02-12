@@ -63,11 +63,14 @@ public class NarrativeObjective : NarrationInteractable
         if (!narrationComponent)
             return;
 
-        // If the clips haven't been queued
-        // Or the narration component hasn't finished playing
-        // Do nothing
-        if (!hasQueuedClips || !narrationComponent.HasFinishedPlaying())
+        // If the narration component hasn't finished playing
+        // Only refresh the objective
+        if (!narrationComponent.HasFinishedPlaying())
+        {
+            // Update narrative objective
+            objectiveComponent.OnRefreshObjective?.Invoke(objectiveIndex);
             return;
+        }
 
         // Null ref protection
         if (!objectiveComponent)
