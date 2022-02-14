@@ -156,13 +156,18 @@ public class ItemInteractable : Interactable
         }
 
         // If this script doesn't accept any items
-        // Do nothing
+        // Return unsuccessfully
         if (acceptedItems.Count <= 0)
+            return false;
+
+        // If this script doesn't accept the player's current item
+        // Return unsuccessfully
+        if (!acceptedItems.Contains(containerScript.CurrentItem))
             return false;
 
         // Reset containter script item value
         containerScript.SetItem(EItem.NONE, null);
-
+        // Return successfully
         return true;
     }
 }

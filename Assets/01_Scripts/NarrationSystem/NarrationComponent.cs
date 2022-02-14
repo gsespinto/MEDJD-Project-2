@@ -72,8 +72,7 @@ public class NarrationComponent : MonoBehaviour
         if (clipsQueue.Count <= 0)
         {
             // If no narration is playing and caption is active
-            // Hide caption
-            // Reset currentNarrationSource ref
+            // Reset values
             if (currentNarrationSource && !currentNarrationSource.isPlaying
             && captionText && captionText.gameObject.activeInHierarchy)
             {
@@ -101,26 +100,34 @@ public class NarrationComponent : MonoBehaviour
         // Play clip
         currentNarrationSource.PlayOneShot(clipsQueue[0].clip);
 
-        // If the caption text ref is valid
-        // Set text to clip's caption and activate object
-        if (captionText)
-        {
-            // If the narration has an owner
-            // Set its text properties
-            string ownerText = "";
-            if (clipsQueue[0].owner != "")
-            {
-                ownerText = "<color=#" + ColorUtility.ToHtmlStringRGB(clipsQueue[0].ownerColor) + "><b>" + clipsQueue[0].owner + ":</b> ";
-            }
-
-            // Caption text to show owner and caption with correspondent colors
-            captionText.text = ownerText + "<color=#" + ColorUtility.ToHtmlStringRGB(captionColor) + ">" + clipsQueue[0].caption;
-            // Show caption
-            captionText.gameObject.SetActive(true);
-        }
+        ShowCaption();
 
         // Remove clip from queue
         clipsQueue.RemoveAt(0);
+    }
+
+    /// <summary> Show current narration's caption </summary>
+    void ShowCaption()
+    {
+        // Null ref protection
+        if (!captionText)
+        {
+            Debug.LogWarning("Missing caption text mesh reference.", this);
+            return;
+        }
+
+        // If the narration has an owner
+        // Set its text properties
+        string ownerText = "";
+        if (clipsQueue[0].owner != "")
+        {
+            ownerText = "<color=#" + ColorUtility.ToHtmlStringRGB(clipsQueue[0].ownerColor) + "><b>" + clipsQueue[0].owner + ":</b> ";
+        }
+
+        // Caption text to show owner and caption with correspondent colors
+        captionText.text = ownerText + "<color=#" + ColorUtility.ToHtmlStringRGB(captionColor) + ">" + clipsQueue[0].caption;
+        // Show caption
+        captionText.gameObject.SetActive(true);
     }
 
     /// <summary> Plays given clip as player SFX </summary>
@@ -143,6 +150,7 @@ public class NarrationComponent : MonoBehaviour
         return clipsQueue.Count <= 0 && !currentNarrationSource;
     }
 
+    /// <summary> Returns whether the given clip is in the queue or has been played already </summary>
     public bool HasClip (FNarration narration)
     {
         return clipsQueue.Contains(narration) || playedClips.Contains(narration);

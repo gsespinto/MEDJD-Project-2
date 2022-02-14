@@ -39,9 +39,11 @@ public class ScoreItem : ItemInteractable
         {
             // Increase score
             scoreScript.ChangeScore(+1);
+            // Return successfully
             return true;
         }
-
+        
+        // Return unsuccessfully
         return false;
     }
 
