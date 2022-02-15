@@ -58,7 +58,24 @@ public class NarrationComponent : MonoBehaviour
 
     private void Update()
     {
+        CheckForPause();
         PlayQueuedClips();
+    }
+
+    void CheckForPause()
+    {
+        if (Time.timeScale != 0)
+        {
+            if (AudioListener.pause)
+                AudioListener.pause = false;
+            return;
+        }
+
+        if (AudioListener.pause)
+            return;
+
+        AudioListener.pause = true;
+            
     }
 
     /// <summary> Plays queued audio clips </summary>

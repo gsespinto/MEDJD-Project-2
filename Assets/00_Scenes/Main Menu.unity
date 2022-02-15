@@ -59046,6 +59046,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5614631819778411180, guid: 3d7ce0f5ca14c8246847e5247f5e6486,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8181626624149380999, guid: 3d7ce0f5ca14c8246847e5247f5e6486,
         type: 3}
       propertyPath: m_Name
@@ -69384,7 +69389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 63847d38ddf18ad41bbd540475989007, type: 3}
+      objectReference: {fileID: 8300000, guid: fca047ccf037bb74caae529599e003b2, type: 3}
     - target: {fileID: 3209701214193282750, guid: 00f47500dc8cf3c4d8a7125ec46f3c8f,
         type: 3}
       propertyPath: m_LocalPosition.x

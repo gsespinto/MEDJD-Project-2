@@ -45,6 +45,9 @@ public class Interactable : MonoBehaviour
     ///<summary> Set if the interactable is gazed at </summary>
     protected virtual void SetGazedAt(bool gazedAt)
     {
+        if (Time.timeScale <= 0)
+            return;
+
         // Engages interaction loading
         isLoadingInteraction = gazedAt;
         // Gazed at callback
@@ -86,7 +89,7 @@ public class Interactable : MonoBehaviour
     /// <summary> Returns true if the interactable is done loading </summary>
     public virtual bool CanInteract()
     {
-        return currentInteractionLoadTime <= 0;
+        return currentInteractionLoadTime <= 0 && Time.timeScale != 0;
     }
 
     /// <summary> Sets input events to handle make this object interactable </summary>

@@ -263,7 +263,7 @@ MonoBehaviour:
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}
   - clip: {fileID: 8300000, guid: ee214bf98c0c9964c9bd73918e5c4f85, type: 3}
-    caption: Wee need to take care of the environment...
+    caption: We need to take care of the environment...
     sourceIndex: 1
     owner: Mom
     ownerColor: {r: 0.9811321, g: 0.8259747, b: 0.46742615, a: 0}

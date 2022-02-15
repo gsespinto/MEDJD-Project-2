@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: {fileID: 4184225575356531618}
-  delegateType: 1
+  delegateType: 0
   audioSource: {fileID: 6998222910352323086}
   sfxs:
   - {fileID: 8300000, guid: 65aa8504dcd42b641b94227d44a5033b, type: 3}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactable: {fileID: 4184225575356531618}
   delegateType: 0
-  destroyTimer: 0.05
+  destroyTimer: 0.1
   objectsToDestroy:
   - {fileID: 5191063073584241396}
   - {fileID: 325822992342392311}
