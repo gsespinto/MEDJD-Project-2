@@ -48,8 +48,9 @@ public class PauseMenu : Interactable
         foreach (GameObject obj in pausedObjects)
             obj.SetActive(false);
 
-        Time.timeScale = 1f;
+        AudioListener.pause = false;
         GameIsPaused = false;
+        Time.timeScale = 1f;
     }
 
     void Pause()
@@ -60,7 +61,8 @@ public class PauseMenu : Interactable
         foreach (GameObject obj in pausedObjects)
             obj.SetActive(true);
 
-        Time.timeScale = 0f;
+        AudioListener.pause = true;
         GameIsPaused = true;
+        Time.timeScale = 0f;
     }
 }
